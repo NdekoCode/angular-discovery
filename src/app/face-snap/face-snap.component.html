@@ -1,0 +1,21 @@
+<article class="card">
+    <header class="card-header">
+        <!-- Attribute binding -->
+        <img [src]="imageURL" [alt]="title">
+
+    </header>
+    <main class="card-body">
+
+        <p>
+            <strong>Titre :</strong> {{ title }}
+        </p>
+        <div class="content">
+            {{ description }}
+        </div>
+
+        <footer class="footer my-3">
+            {{ snaps }} Personnes ont aimer {{ createdDate }}
+            <button type="button">Aimer</button>
+        </footer>
+    </main>
+</article>
