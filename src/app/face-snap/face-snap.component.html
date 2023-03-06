@@ -14,8 +14,8 @@
         </div>
 
         <footer class="footer my-3">
-            {{ snaps }} Personnes ont aimer {{ createdDate }}
-            <button type="button">Aimer</button>
+            <strong>{{ snaps }}</strong> Personnes ont aimer {{ createdDate }}
+            <button (click)="onAddSnap()" type="button">Aimer</button>
         </footer>
     </main>
 </article>
