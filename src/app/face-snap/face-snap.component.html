@@ -1,9 +1,5 @@
 <article class="card">
-    <header class="card-header">
-        <!-- Attribute binding -->
-        <img [src]="faceSnap.imageURL" [alt]="faceSnap.title">
-
-    </header>
+    <app-image-snap [image]="faceSnap.imageURL" [title]="faceSnap.title"></app-image-snap>
     <main class="card-body">
 
         <p>
@@ -12,11 +8,12 @@
         <div class="content">
             {{ faceSnap.title }}
         </div>
-
-        <footer class="footer my-3">
-            <strong>{{ faceSnap.snaps }}</strong> Personnes ont aimer {{ faceSnap.createdDate }}
-            <button (click)="onSnap()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
-        </footer>
         {{ type }}
     </main>
+
+
+    <footer class="footer my-3">
+        <strong>{{ faceSnap.snaps }}</strong> Personnes ont aimer {{ faceSnap.createdDate }}
+        <button (click)="onSnap()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
+    </footer>
 </article>
