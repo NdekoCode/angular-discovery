@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
         'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB3b21lbiUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
       createdDate: new Date(),
       snaps: 7,
+      location: 'Paris',
     };
 
     this.secondSnap = {
@@ -31,9 +32,10 @@ export class AppComponent implements OnInit {
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
       imageURL:
-        'https://images.unsplash.com/photo-1573164574472-797cdf4a583a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwd29tZW4lMjB3b3JrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+        'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
       createdDate: new Date(),
       snaps: 5,
+      location: 'Congo RDC',
     };
 
     this.thirdSnap = {
