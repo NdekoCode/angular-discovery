@@ -1,20 +1,20 @@
 <article class="card">
     <header class="card-header">
         <!-- Attribute binding -->
-        <img [src]="imageURL" [alt]="title">
+        <img [src]="faceSnap.imageURL" [alt]="faceSnap.title">
 
     </header>
     <main class="card-body">
 
         <p>
-            <strong>Titre :</strong> {{ title }}
+            <strong>Titre :</strong> {{ faceSnap.title }}
         </p>
         <div class="content">
-            {{ description }}
+            {{ faceSnap.title }}
         </div>
 
         <footer class="footer my-3">
-            <strong>{{ snaps }}</strong> Personnes ont aimer {{ createdDate }}
+            <strong>{{ faceSnap.snaps }}</strong> Personnes ont aimer {{ faceSnap.createdDate }}
             <button (click)="onSnap()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
         </footer>
     </main>
