@@ -3,8 +3,20 @@
 *::before,
 *::after {
     font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size  : 14px;
     color      : #333;
+    margin     : 0;
+    padding    : 0;
+}
+
+.container {
+    max-width: 1240px;
+    margin   : 0 auto;
+}
+
+@for $i from 1 through 10 {
+    .mt-#{$i} {
+        margin-top: 0.25rem * $i;
+    }
 }
 
 body {
@@ -16,4 +28,21 @@ body {
     .my-#{$i} {
         margin: (0.23*$i) * 1rem 0;
     }
+}
+
+button {
+    border    : none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.01);
+    cursor    : pointer;
+}
+
+.btn {
+    padding      : 8px 12px;
+    border-radius: 4px;
+
+}
+
+.btn-primary {
+    background-color: rgb(40, 121, 243);
+    color           : #fff;
 }
