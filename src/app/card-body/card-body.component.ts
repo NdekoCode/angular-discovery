@@ -1,0 +1,11 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-card-body',
+  templateUrl: './card-body.component.html',
+  styleUrls: ['./card-body.component.scss'],
+})
+export class CardBodyComponent {
+  @Input() title!: string;
+  @Input() type!: string;
+}

@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { ImageSnapComponent } from './image-snap/image-snap.component';
+import { CardFooterComponent } from './card-footer/card-footer.component';
+import { CardBodyComponent } from './card-body/card-body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FaceSnapComponent,
-    ImageSnapComponent
+    ImageSnapComponent,
+    CardFooterComponent,
+    CardBodyComponent
   ],
   imports: [
     BrowserModule,

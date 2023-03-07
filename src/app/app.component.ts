@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   secondSnap!: FaceSnap;
   thirdSnap!: FaceSnap;
   typeSnap!: string;
+
   ngOnInit(): void {
     this.typeSnap = 'Photos';
     this.snap = new FaceSnap(

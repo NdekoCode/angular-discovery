@@ -1,19 +1,6 @@
 <article class="card">
-    <app-image-snap [image]="faceSnap.imageURL" [title]="faceSnap.title"></app-image-snap>
-    <main class="card-body">
+  <app-image-snap [image]="faceSnap.imageURL" [title]="faceSnap.title"></app-image-snap>
+  <app-card-body [title]="faceSnap.title" [type]="type"></app-card-body>
 
-        <p>
-            <strong>Titre :</strong> {{ faceSnap.title }}
-        </p>
-        <div class="content">
-            {{ faceSnap.title }}
-        </div>
-        {{ type }}
-    </main>
-
-
-    <footer class="footer my-3">
-        <strong>{{ faceSnap.snaps }}</strong> Personnes ont aimer {{ faceSnap.createdDate }}
-        <button (click)="onSnap()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
-    </footer>
+  <app-card-footer [createdDate]="faceSnap.createdDate" [snaps]="faceSnap.snaps" [isLiked]="isLiked"></app-card-footer>
 </article>
