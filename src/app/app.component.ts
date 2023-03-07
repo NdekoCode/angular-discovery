@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       imageURL:
         'https://images.unsplash.com/photo-1571442463800-1337d7af9d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsYWNrJTIwd29tZW4lMjB3b3JrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
       createdDate: new Date(),
-      snaps: 4,
+      snaps: 0,
     };
   }
 }
