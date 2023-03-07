@@ -8,7 +8,9 @@ import { FaceSnap } from './models/face-snap.model';
 })
 export class AppComponent implements OnInit {
   snap!: FaceSnap;
+  typeSnap!: string;
   ngOnInit(): void {
+    this.typeSnap = 'Photos';
     this.snap = new FaceSnap(
       'Lorem Ipsum is simply',
 
