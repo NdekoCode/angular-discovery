@@ -9,6 +9,7 @@ export class CardFooterComponent {
   @Input() snaps!: number;
   @Input() isLiked!: boolean;
   @Input() createdDate!: Date;
+  @Input() location?: string;
   onIncrement() {
     if (this.isLiked) {
       this.snaps--;
