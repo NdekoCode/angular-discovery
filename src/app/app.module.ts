@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CardBodyComponent } from './card-body/card-body.component';
+import { CardFooterComponent } from './card-footer/card-footer.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { ImageSnapComponent } from './image-snap/image-snap.component';
-import { CardFooterComponent } from './card-footer/card-footer.component';
-import { CardBodyComponent } from './card-body/card-body.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,19 @@ import { CardBodyComponent } from './card-body/card-body.component';
     FaceSnapComponent,
     ImageSnapComponent,
     CardFooterComponent,
-    CardBodyComponent
+    CardBodyComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr-FR',
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}
