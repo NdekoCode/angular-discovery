@@ -1,7 +1,17 @@
 
 <footer class="footer my-3">
-    <strong [ngStyle]="{ color: 'rgba(0,'+snaps+',0)' }">{{ snaps }}</strong> Personnes ont aimer 
-    <p class="mt-1 my-2 dumb"><em>{{ createdDate | date: ' à H:mm, le d,MMMM, yyyy ' }}</em></p>
+    <strong [ngStyle]="{ color: 'rgba(0,'+snaps+',0)' }">{{ snaps | number }}</strong> Personnes ont aimer 
+    <p class="mt-1 my-2 dumb"><em>{{ createdDate | date: ' à H:mm, le d,MMMM, yyyy ' }}</em>
+    </p>
+        <!-- Minimum 2 chiffre apres la virgule et au maximum 2 chiffres après la virgule  -->
+        <p>{{ 0.356 | percent:'1.2-2' }}</p>
+
+        <p>{{ 356.4 | currency }}</p>  <!-- Va afficher la monnaie en dollar americain-->
+    <p>{{ 356.4 | currency:'EUR' }}</p><!-- Va afficher la monnaie en euro-->
+    <p>{{ 356.4 | currency:'EUR':'code' }}</p><!-- Va afficher la monnaie en euro mais avec le code de la monnaie-->
     <p class="mt-1 my-2 text-gray" *ngIf="location">Photos prise à {{ location }}</p>
     <button class="btn btn-shadow" (click)="onIncrement()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
+    <!-- {{ number | number :'1.0-0' }} -->
+    <!--  Pour dire que on: LeNombre minimum de chiffre avant la virgule.Le nombre minimum de chiffre apres la virgule.Le nombre minimum de chiffre après la virgule -->
+    <p>{{ 4346234.36 | number: '1.0-1'}}</p>
 </footer>
