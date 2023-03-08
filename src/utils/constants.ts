@@ -10,7 +10,7 @@ export const faceSnapsData: FaceSnap[] = [
     imageURL:
       'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB3b21lbiUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
     createdDate: new Date(),
-    snaps: 7,
+    snaps: 17,
     location: 'Paris',
   },
   {
@@ -20,7 +20,7 @@ export const faceSnapsData: FaceSnap[] = [
     imageURL:
       'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
     createdDate: new Date(),
-    snaps: 5,
+    snaps: 205,
     location: 'Congo RDC',
   },
   {

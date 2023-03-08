@@ -46,3 +46,8 @@ button {
     background-color: rgb(40, 121, 243);
     color           : #fff;
 }
+
+.btn-shadow {
+    box-shadow      : 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+}

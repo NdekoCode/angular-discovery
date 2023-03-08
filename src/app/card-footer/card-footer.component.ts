@@ -10,7 +10,9 @@ export class CardFooterComponent {
   @Input() isLiked!: boolean;
   @Input() createdDate!: Date;
   @Input() location?: string;
+  @Input() funcProps!: Function;
   onIncrement() {
+    console.log(this.snaps);
     if (this.isLiked) {
       this.snaps--;
       this.isLiked = false;

@@ -1,7 +1,7 @@
 
 <footer class="footer my-3">
-    <strong>{{ snaps }}</strong> Personnes ont aimer 
-    <p class="mt-1 my-2 dumb"><em>{{ createdDate.toDateString() }}</em></p>
+    <strong [ngStyle]="{ color: 'rgba(0,'+snaps+',0)' }">{{ snaps }}</strong> Personnes ont aimer 
+    <p class="mt-1 my-2 dumb"><em>{{ createdDate | date: ' à H:mm, le d,MMMM, yyyy ' }}</em></p>
     <p class="mt-1 my-2 text-gray" *ngIf="location">Photos prise à {{ location }}</p>
-    <button class="btn btn-primary" (click)="onIncrement()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
+    <button class="btn btn-shadow" (click)="onIncrement()" type="button">{{ isLiked  ? "Je n'aime plus" : "J'aime"}}</button>
 </footer>
