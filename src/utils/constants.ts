@@ -19,8 +19,7 @@ export const faceSnapsData: FaceSnap[] = [
     title: 'Lorem Ipsum is simply',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
-    imageURL:
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+    imageURL: '/assets/images/HEALTHYFRESH.jpg',
     createdDate: new Date(),
     snaps: 205,
     location: 'Congo RDC',
@@ -39,8 +38,7 @@ export const faceSnapsData: FaceSnap[] = [
     id: 4,
     title: 'Archibald',
     description: 'Mon meilleur ami depuis tout petit !',
-    imageURL:
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+    imageURL: '/assets/images/teddy.jpg',
     createdDate: new Date(),
     snaps: 0,
     location: 'Paris',
@@ -49,8 +47,7 @@ export const faceSnapsData: FaceSnap[] = [
     id: 5,
     title: 'Three Rock Mountain',
     description: 'Un endroit magnifique pour les randonnées.',
-    imageURL:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+    imageURL: '/assets/images/mountain.jpg',
     createdDate: new Date(),
     snaps: 6,
     location: 'la montagne',
