@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faceSnapsData } from 'src/utils/constants';
 import { FaceSnap } from '../models/face-snap.model';
+import { FaceSnapService } from './../services/face-snap.service';
 
 @Component({
   selector: 'app-face-snap-list',
@@ -8,11 +8,12 @@ import { FaceSnap } from '../models/face-snap.model';
   styleUrls: ['./face-snap-list.component.scss'],
 })
 export class FaceSnapListComponent implements OnInit {
+  constructor(private faceSnapService: FaceSnapService) {}
   faceSnaps!: FaceSnap[];
   typeSnap!: string;
 
   ngOnInit(): void {
     this.typeSnap = 'Photos';
-    this.faceSnaps = faceSnapsData;
+    this.faceSnaps = this.faceSnapService.faceSnaps;
   }
 }
