@@ -9,6 +9,8 @@ import { CardBodyComponent } from './card-body/card-body.component';
 import { CardFooterComponent } from './card-footer/card-footer.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { ImageSnapComponent } from './image-snap/image-snap.component';
+import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ImageSnapComponent } from './image-snap/image-snap.component';
     ImageSnapComponent,
     CardFooterComponent,
     CardBodyComponent,
+    FaceSnapListComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
