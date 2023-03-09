@@ -12,7 +12,6 @@ export class CardFooterComponent {
   @Input() location?: string;
   @Input() funcProps!: Function;
   onIncrement() {
-    console.log(this.snaps);
     if (this.isLiked) {
       this.snaps--;
       this.isLiked = false;

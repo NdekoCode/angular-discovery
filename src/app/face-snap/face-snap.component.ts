@@ -17,11 +17,12 @@ export class FaceSnapComponent implements OnInit {
     this.isLiked = false;
   }
   onSnap() {
+    console.log(this);
     if (this.isLiked) {
-      this.faceSnap.snaps--;
+      this.FaceSnapService.snapFaceSnapById(this.faceSnap.id);
       this.isLiked = false;
     } else {
-      this.FaceSnapService.snapFaceSnapById(this.faceSnap.id);
+      this.FaceSnapService.snapFaceSnapById(this.faceSnap.id, 'inc');
       this.isLiked = true;
     }
   }
