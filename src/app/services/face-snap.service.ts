@@ -7,4 +7,8 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class FaceSnapService {
   faceSnaps: FaceSnap[] = faceSnapsData;
+
+  getAllFaceSnaps(): FaceSnap[] {
+    return this.faceSnaps;
+  }
 }

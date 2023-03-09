@@ -2,6 +2,7 @@ import { FaceSnap } from 'src/app/models/face-snap.model';
 
 export const faceSnapsData: FaceSnap[] = [
   {
+    id: 1,
     title: 'Lorem Ipsum is simply',
 
     description:
@@ -14,6 +15,7 @@ export const faceSnapsData: FaceSnap[] = [
     location: 'Paris',
   },
   {
+    id: 2,
     title: 'Lorem Ipsum is simply',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
@@ -24,6 +26,7 @@ export const faceSnapsData: FaceSnap[] = [
     location: 'Congo RDC',
   },
   {
+    id: 3,
     title: 'Lorem Ipsum is simply',
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
@@ -33,6 +36,7 @@ export const faceSnapsData: FaceSnap[] = [
     snaps: 0,
   },
   {
+    id: 4,
     title: 'Archibald',
     description: 'Mon meilleur ami depuis tout petit !',
     imageURL:
@@ -42,6 +46,7 @@ export const faceSnapsData: FaceSnap[] = [
     location: 'Paris',
   },
   {
+    id: 5,
     title: 'Three Rock Mountain',
     description: 'Un endroit magnifique pour les randonnées.',
     imageURL:
@@ -51,6 +56,7 @@ export const faceSnapsData: FaceSnap[] = [
     location: 'la montagne',
   },
   {
+    id: 6,
     title: 'Un bon repas',
     description: "Mmmh que c'est bon !",
     imageURL: 'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
