@@ -25,4 +25,7 @@ export class FaceSnapComponent implements OnInit {
       this.isLiked = true;
     }
   }
+  onView() {
+    this.onSnap();
+  }
 }

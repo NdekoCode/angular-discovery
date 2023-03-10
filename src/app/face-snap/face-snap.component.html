@@ -1,10 +1,6 @@
 <article class="card" [ngClass]="{ snapped:isLiked}">
 <main  class="card-body">
-  
- 
-  <h2 class="my-3">
-    {{ faceSnap.title | uppercase }}
-</h2>
-<button class="btn btn-shadow" type="button">View Snap</button>
+  <app-card-body [title]="faceSnap.title" [description]="faceSnap.description"></app-card-body>
+<button (click)="onView()" class="btn btn-shadow" type="button">View Snap</button>
 </main>
 </article>
