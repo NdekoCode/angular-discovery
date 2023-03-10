@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 const routes: Routes = [
   {
     path: 'facesnaps',
@@ -12,6 +13,10 @@ const routes: Routes = [
     path: '',
     // pathMatch: 'full',
     component: LandingPageComponent,
+  },
+  {
+    path: 'facesnaps/:id',
+    component: SingleFaceSnapComponent,
   },
   {
     path: 'facesnap',
