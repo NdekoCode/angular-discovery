@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapService } from './../services/face-snap.service';
 
@@ -12,7 +13,10 @@ export class FaceSnapComponent implements OnInit {
   @Input() type!: string;
   // On met le point d'exclamation pour dire que c'est une variable qui ne sera jamais null et sera toujours de type string
   isLiked!: boolean;
-  constructor(private FaceSnapService: FaceSnapService) {}
+  constructor(
+    private FaceSnapService: FaceSnapService,
+    private router: Router
+  ) {}
   ngOnInit() {
     this.isLiked = false;
   }
@@ -25,7 +29,8 @@ export class FaceSnapComponent implements OnInit {
       this.isLiked = true;
     }
   }
-  onView() {
+  onViewFaceSnap(faceSnapId: number) {
     this.onSnap();
+    this.router.navigateByUrl('/facesnaps/' + faceSnapId);
   }
 }
