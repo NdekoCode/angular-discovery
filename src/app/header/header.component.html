@@ -3,10 +3,10 @@
     <nav>
         <ul class="nav justify-content-center  ">
             <li class="nav-item">
-                <a class="nav-link active" routerLink="/" aria-current="page">Home</a>
+                <a class="nav-link active" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/facesnaps">FaceSnaps</a>
+                <a class="nav-link" routerLink="/facesnaps" routerLinkActive="active" >FaceSnaps</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled link</a>
