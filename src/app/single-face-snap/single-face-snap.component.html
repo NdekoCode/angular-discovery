@@ -1,4 +1,5 @@
-<article class="card" [ngClass]="{ snapped:isLiked}">
+<a routerLink="/facesnaps">Back</a>
+<article class="card single-facesnap" [ngClass]="{ snapped:isLiked}">
     <header class="card-header">
 
     <app-image-snap [image]="faceSnap.imageURL" [title]="faceSnap.title"></app-image-snap>

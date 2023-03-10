@@ -29,8 +29,8 @@ export class FaceSnapComponent implements OnInit {
       this.isLiked = true;
     }
   }
-  onViewFaceSnap(faceSnapId: number) {
+  onViewFaceSnap() {
     this.onSnap();
-    this.router.navigateByUrl('/facesnaps/' + faceSnapId);
+    this.router.navigateByUrl(`/facesnaps/${this.faceSnap.id}`);
   }
 }

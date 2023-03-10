@@ -80,3 +80,22 @@ ul,
 ol {
     list-style: none;
 }
+
+.card {
+
+    &.single-facesnap {
+        border-radius: 0;
+        margin-top   : 2rem;
+        box-shadow   : none !important;
+
+        .card-header {
+            img {
+                max-width   : 880px;
+                width       : 550px;
+                height      : 350px;
+                aspect-ratio: auto;
+                overflow    : hidden;
+            }
+        }
+    }
+}
