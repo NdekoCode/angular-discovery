@@ -1,8 +1,10 @@
 <article class="card" [ngClass]="{ snapped:isLiked}">
-  <app-image-snap [image]="faceSnap.imageURL" [title]="faceSnap.title"></app-image-snap>
 <main  class="card-body">
   
-  <app-card-body [title]="faceSnap.title" [description]="faceSnap.description" [type]="type"></app-card-body>
-  <app-card-footer [createdDate]="faceSnap.createdDate" [snaps]="faceSnap.snaps" [isLiked]="isLiked" [location]="faceSnap.location" (click)="onSnap()" *ngIf="faceSnap.snaps >= 1"></app-card-footer>
+ 
+  <h2 class="my-3">
+    {{ faceSnap.title | uppercase }}
+</h2>
+<button class="btn btn-shadow" type="button">View Snap</button>
 </main>
 </article>

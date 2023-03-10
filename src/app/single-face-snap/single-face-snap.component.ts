@@ -19,7 +19,8 @@ export class SingleFaceSnapComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.isLiked = false;
-    this.faceSnapId = parseInt(this.router.snapshot.params['id']);
+    // On fait du typeCast: ça nous permet de transformer une chaine de caractère qui contient des nombres et les transformer en Number
+    this.faceSnapId = +this.router.snapshot.params['id'];
     this.faceSnap = this._snapService.getFaceSnapById(this.faceSnapId);
   }
   onSnap() {
