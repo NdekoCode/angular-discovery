@@ -17,7 +17,6 @@ export class FaceSnapComponent implements OnInit {
     this.isLiked = false;
   }
   onSnap() {
-    console.log(this);
     if (this.isLiked) {
       this.FaceSnapService.snapFaceSnapById(this.faceSnap.id);
       this.isLiked = false;
