@@ -46,3 +46,23 @@ L'avantage d'un framework est que les developpeur n'ont pas à savoir si une con
 ### Difference
 
 En resumer si vous utilisez une librairie c'est vous qui l'appelez tandisque si vous utilisez un Framework c'est lui qui vous appel.
+
+## Structure d'un projet Angular
+
+Une application angular contient plusieurs dossiers et fichiers, la plus part sont des fichiers ou des dossiers de configuration telle que
+
+- le dossier `node_modules` qui regroupe l'ensemble des dependances de votre projet
+- Le fichier `editorconfig` est en charge de la configuration de votre editeur de code.
+- Le fichier `gitignore` qui specifie les fichiers et les dossiers que Angular doit ignorer
+- Le fichier `angular.json` qui correspond à la configuration CLI de votre projet Angular
+- Le fichier `package.json` ui regroupe l'ensemble des dependances installancer dans votre projet ainsi que le script NPM et les informations sur leurs versions sont dans le ficher `package..lock.json` ou `pnpm-lock.yaml`
+- Le fichier `tsconfig.json` est un fichier qui participe à la configuration de TypeScript.
+- Le repertoire `src` sera le repertoire qui nous interessera le plus car c'est lui qui contient tous les fichiers sources de notre application.
+  - Son sous repertoire `/src/app` est celui qui contient tous les fichiers de composant de notre application, c'est dans ce repertoire qu'est definit la logique et les données de notre application `Angular`
+  - Le repertoire `/src/assets` celui-ci contient les images et les fichiers ressources
+  - Le fichier `/src/favicon.ico` est une icone qui vous permet de personnaliser vos onglets
+  - Le fichier `/src/index.html` est le fichier principal de votre application
+  - Nous avons le fichier `main.ts` qui est un fichier `TypeScript` qui est là pour demarrer et gerer la logique de notre application
+  - Le fichier `test.ts` est présent pour gerer la création des test unitaire.
+  - Nous avons le fichier `style.scss` ou `style.css` pour le style CSS
+Vus que nous nous trouvons dans un framework noter que l'ensemble de notre application a déjà sa propre structure, sa propre squelette.
