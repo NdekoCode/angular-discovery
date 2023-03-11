@@ -66,3 +66,40 @@ Une application angular contient plusieurs dossiers et fichiers, la plus part so
   - Le fichier `test.ts` est présent pour gerer la création des test unitaire.
   - Nous avons le fichier `style.scss` ou `style.css` pour le style CSS
 Vus que nous nous trouvons dans un framework noter que l'ensemble de notre application a déjà sa propre structure, sa propre squelette.
+
+## Les composants
+
+L'Un des principaux concept d'angular est que l'interface de l'application repose sur une arborescence des composants ou `component`,
+
+### Qu'est-ce qu'un composant ?
+
+**Un composant n'est rien d'autre qu'un blog de code réutilisable**, l'avantage est que l'on peut emboiter ces composants les un dans les autres.
+Lors de la creation d'une application Angular on partira toujours d'un composant racine `AppComponent` qui represente l'ensemble de l'application, ce dernier contiendra des sous composants qui represente par exemple des zones de l'ecran comme `le menu`, la `sidebar`, `le corps de page` ou encore une `navbar`, à leurs tours ces sous composants peuvent contenir des sous composants et ainsi de suite on arrive à former une arborescence des composants.
+Un composant angular représente un bout d'interface de l'application, c'est à vous de decider ce que vous mettez dans un composant, cela peut aller d'un simple button à une page Web entière.
+Avec Angular un composant s'organise en 4 fichiers dont le dernier est optionnel
+
+- un fichier pour le HTML
+- Un fichier pour le CSS
+- un fichier pour la logique TypeScript
+- Un fichier optionnel si nous souhaitons ajouter les test unitaires.
+
+### Comprendre le cycle de vie d'un composant
+
+Chaque composant passe par une serie d'Etat, comme par exemple:
+
+- l'initialisation du composant
+- Sa mise à jour ou encore
+- Sa destruction quand l'interface n'en a plus besoin
+
+Il existe des fonctions appeler `lifecycle hook` ou hook de cycle de vie, donnant aux utilisateurs la possibilités d'ajouter leurs propres code à l'une ou plusieurs de ces Etas spécifique.
+Les hooks de cycle de vie d'angular vont nous permettre d'executer du code lorsque un composant atteint un etat particulier lors de l'execution.
+La documentation d'Angular sur [Documentation angular](https://angular.io/guide/lifecycle-hooks) nous fournit une liste de ces methodes.
+Après avoir créer un composant, Angular appel les methodes des hooks de cycle de vie dans l'ordre suivant selon des moments specifiques, par exemple:
+
+- `ngOnChange()`: est appeler lors de l'initialisation des données et à chaque fois qu'une ou plusieurs proprieter lier aux données changent (Donc il est appeler quand un composant est mis à jour)
+- `ngOnInit()`: est appeler lors de l'initialisation du composant après que angular aie récupérer les données:
+- `ngOnDestroy()`: est appeler au moment de la destruction d'un composant.
+
+### Creation d'un composant
+
+Pour créer un composant Angular, on utilise la ligne de commande en executant la commande `ng generate component NomDuComposant` ou `ng g c NomDuComposant`
