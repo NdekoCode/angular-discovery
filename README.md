@@ -66,3 +66,9 @@ Une application angular contient plusieurs dossiers et fichiers, la plus part so
   - Le fichier `test.ts` est présent pour gerer la création des test unitaire.
   - Nous avons le fichier `style.scss` ou `style.css` pour le style CSS
 Vus que nous nous trouvons dans un framework noter que l'ensemble de notre application a déjà sa propre structure, sa propre squelette.
+
+## Qu'est-ce qu'un composant ?
+
+L'Un des principaux concept d'angular est que l'interface de l'application repose sur une arborescence des composants ou `component`, **un composant n'est rien d'autre qu'un blog de code réutilisable**, l'avantage est que l'on peut emboiter ces composants les un dans les autres.
+Lors de la creation d'une application Angular on partira toujours d'un composant racine `AppComponent` qui represente l'ensemble de l'application, ce dernier contiendra des sous composants qui represente par exemple des zones de l'ecran comme `le menu`, la `sidebar`, `le corps de page` ou encore une `navbar`, à leurs tours ces sous composants peuvent contenir des sous composants et ainsi de suite on arrive à former une arborescence des composants.
+Un composant angular représente un bout d'interface de l'application, c'est à vous de decider ce que vous mettez dans un composant, cela peut aller d'un simple button à une page Web entière.
