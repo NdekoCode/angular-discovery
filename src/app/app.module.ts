@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { ImageSnapComponent } from './image-snap/image-snap.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { ArticleComponent } from './article/article.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.com
     HeaderComponent,
     LandingPageComponent,
     SingleFaceSnapComponent,
+    ArticleComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

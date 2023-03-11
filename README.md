@@ -99,3 +99,7 @@ Après avoir créer un composant, Angular appel les methodes des hooks de cycle 
 - `ngOnChange()`: est appeler lors de l'initialisation des données et à chaque fois qu'une ou plusieurs proprieter lier aux données changent (Donc il est appeler quand un composant est mis à jour)
 - `ngOnInit()`: est appeler lors de l'initialisation du composant après que angular aie récupérer les données:
 - `ngOnDestroy()`: est appeler au moment de la destruction d'un composant.
+
+### Creation d'un composant
+
+Pour créer un composant Angular, on utilise la ligne de commande en executant la commande `ng generate component NomDuComposant` ou `ng g c NomDuComposant`
