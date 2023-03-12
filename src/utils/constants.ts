@@ -73,7 +73,7 @@ export const products = [
     category: 'smartphones',
     imageURL: 'https://dummyjson.com/image/i/products/1/thumbnail.jpg',
 
-    like: 1,
+    like: 9,
   },
   {
     title: 'iPhone X',
@@ -86,7 +86,7 @@ export const products = [
     brand: 'Apple',
     category: 'smartphones',
     imageURL: 'https://dummyjson.com/image/i/products/2/thumbnail.jpg',
-    like: 1,
+    like: 5,
   },
   {
     title: 'Samsung Universe 9',
@@ -99,7 +99,7 @@ export const products = [
     brand: 'Samsung',
     category: 'smartphones',
     imageURL: 'https://dummyjson.com/image/i/products/3/thumbnail.jpg',
-    like: 1,
+    like: 4,
   },
   {
     title: 'OPPOF19',
@@ -120,11 +120,11 @@ export const products = [
     price: 499,
     discountPercentage: 10.58,
     rating: 4.09,
-    stock: 32,
+    stock: 0,
     brand: 'Huawei',
     category: 'smartphones',
     imageURL: 'https://dummyjson.com/image/i/products/5/thumbnail.jpg',
-    like: 1,
+    like: 3,
   },
   {
     title: 'MacBook Pro',

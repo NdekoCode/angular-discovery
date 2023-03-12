@@ -19,7 +19,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.typeSnap = 'Photos';
     this.faceSnaps = faceSnapsData;
-
-    console.log(this._bookService.getBooks());
   }
 }

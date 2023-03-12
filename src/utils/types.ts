@@ -13,8 +13,8 @@ export type Product = {
   imageURL: string;
   like: number;
   discountPercentage?: number;
+  stock: number;
   rating?: number;
-  stock?: number;
   brand?: string;
   category?: string;
 };
