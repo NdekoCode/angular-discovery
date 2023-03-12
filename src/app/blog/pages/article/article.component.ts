@@ -8,4 +8,8 @@ import { Post } from 'src/utils/types';
 })
 export class ArticleComponent {
   @Input() post!: Post;
+
+  onLike() {
+    this.post.like++;
+  }
 }

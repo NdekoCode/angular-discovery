@@ -183,4 +183,44 @@ export class AppModule {
 Data-binding: liaison des données, c'est la communication entre votre code TypeScript et votre template HTML qui est montrer à l'utilisateur
 Cette communication peut prendre plusieurs forme comme:
 
-### string interpollation
+### string interpolation
+
+ `String interpolation` ou l'interpollation des texte permet de transferer les données du code typescript vers le template HTML.
+ Pour afficher du contenus en HTML dont la donnée est réaliter stocker dans une variable TypeScript on utilise le `string interpolation`
+
+```{HTML}
+ <p class="card-text">
+      {{ post.description }}
+  </p>
+```
+
+![STRING INTERPOLATION](/src/assets/images/docs/string-interpolation.png "STRING INTERPOLATION")
+
+### attribute binding ou property binding
+
+Le property binding est également appeler liaison par propriéter, il s'agit d'une autre manière de créer une communication dynamic entre votre TypeScript et votre template HTML.
+Celui-ci s'utilise meme sur les attribut HMTL ou les proprieter HTML sous forme de crocher `[]`, par exemple
+
+```{HTML}
+  <img [src]="post.image" class="card-img-top" [alt]="post.title" />
+```
+
+De cette façon ce que contient nos guillements ne seront plus interpreter comme etant du texte mais comme etant une expression TypeScript.
+
+![attribute binding ou property binding](/src/assets/images/docs/property-binding.png "attribute binding ou property binding")
+
+En resumer le propertie binding vous permet de recuperer une donnée présente dans votre TypeScript à fin de l'inserer dans votre template HTML, plus précisement pour la donnée comme valeur à l'attribut d'une balise HTML.
+
+### Event Binding
+
+A fin de rendre notre application dynamic il faut que l'utilisateur puisse interagir avec elle, pour cela nous utilisons des evenements comme le clic, le scroll ou l'ecriture sur un clavier.
+En Angular pour ajouter les evenement on utilise une syntaxe un peu similaire à celui des propertie binding mais à la passe des crochet on utilise les parenthèses `()` et à l'interieur de ces parenthèses on met le nom de l'evement à laquelle on va egaliser une fonction TypeScript qui sera executer quand l'utilisera va declencher cet evenement.
+Pour les methodes lier aux evenement il existe une convention de nomenclature qui dit que les methodes qui seront executer par des evenement devront commencer avec `on` suivit du nom de la fonction, cela permet de suivre plus facilement l'execution des methodes lorsque l'application devient plus complex.
+
+```{HTML}
+    <button type="button" (click)="onLike()" class="btn btn-primary">
+      like
+    </button>
+```
+
+![Event Binding](/src/assets/images/docs/event-binding.png "Event Binding")
