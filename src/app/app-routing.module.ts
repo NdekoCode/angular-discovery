@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
-import { HomeComponent } from './home/home.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { HomeComponent } from './blog/pages/home/home.component';
+import { FaceSnapListComponent } from './faceSnapsTutos/pages/face-snap-list/face-snap-list.component';
+import { FaceSnapComponent } from './faceSnapsTutos/pages/face-snap/face-snap.component';
+import { LandingPageComponent } from './faceSnapsTutos/pages/landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './faceSnapsTutos/pages/single-face-snap/single-face-snap.component';
 const routes: Routes = [
   {
     path: '',

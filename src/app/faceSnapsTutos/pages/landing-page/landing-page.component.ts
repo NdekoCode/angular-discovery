@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BookService } from '../services/book-service.service';
+import { BookService } from '../../../services/book-service.service';
 
 @Component({
   selector: 'app-landing-page',

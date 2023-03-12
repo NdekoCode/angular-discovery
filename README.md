@@ -177,3 +177,10 @@ export class AppModule {
 }
 
 ```
+
+## Data-binding
+
+Data-binding: liaison des données, c'est la communication entre votre code TypeScript et votre template HTML qui est montrer à l'utilisateur
+Cette communication peut prendre plusieurs forme comme:
+
+### string interpollation

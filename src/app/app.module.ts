@@ -5,18 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardBodyComponent } from './card-body/card-body.component';
-import { CardFooterComponent } from './card-footer/card-footer.component';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
-import { HeaderComponent } from './header/header.component';
-import { ImageSnapComponent } from './image-snap/image-snap.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
-import { ArticleComponent } from './article/article.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './blog/components/footer/footer.component';
+import { NavbarComponent } from './blog/components/navbar/navbar.component';
+import { ArticleComponent } from './blog/pages/article/article.component';
+import { HomeComponent } from './blog/pages/home/home.component';
+import { CardBodyComponent } from './faceSnapsTutos/components/card-body/card-body.component';
+import { CardFooterComponent } from './faceSnapsTutos/components/card-footer/card-footer.component';
+import { HeaderComponent } from './faceSnapsTutos/components/header/header.component';
+import { ImageSnapComponent } from './faceSnapsTutos/components/image-snap/image-snap.component';
+import { FaceSnapListComponent } from './faceSnapsTutos/pages/face-snap-list/face-snap-list.component';
+import { FaceSnapComponent } from './faceSnapsTutos/pages/face-snap/face-snap.component';
+import { LandingPageComponent } from './faceSnapsTutos/pages/landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './faceSnapsTutos/pages/single-face-snap/single-face-snap.component';
 
 @NgModule({
   declarations: [
