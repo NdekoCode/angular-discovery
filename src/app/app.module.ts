@@ -1,8 +1,8 @@
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './blog/components/footer/footer.component';
@@ -34,7 +34,7 @@ import { SingleFaceSnapComponent } from './faceSnapsTutos/pages/single-face-snap
     FooterComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     {
       provide: LOCALE_ID,

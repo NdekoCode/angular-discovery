@@ -224,3 +224,76 @@ Pour les methodes lier aux evenement il existe une convention de nomenclature qu
 ```
 
 ![Event Binding](/src/assets/images/docs/event-binding.png "Event Binding")
+
+### Two-Way binding ou La liaison à double sens
+
+Jusqu'ici nous realisions une liaison uni-directionnelle, càd nous envoyons des données depuis notre code TypeScript vers le template HTML mais jusqu'à present nous ne pouvions pas faire le sens inverse càd envoyer des données du template HTML vers le TypeScript, le two-way binding va nous permettre de mettre en place cela.
+Le two-way binding utilise la liaison par proprieter et la liaison par evenement en meme temps voilà pourquoi sa syntaxe sont des crochet contenant des parathèse `[()]`, on l'utilise par exemple pour les formulaire à fin de pouvoir declarer ou recuperer le contenus des champs.
+
+Pour recuperer le contenus d'un champs pour l'envoyer du HMTL vers le typescript et ainsi utiliser le two-way binding il nous faudra importer le module `FormsModule` depuis `@angular/forms` dans `AppModule` et le mettre dans la clé `imports` de la liste se trouvant dans le docorateurs `@NgModule`.
+Si nous ne faisons pas cela, la fonctionnalité `two-way binding` ne sera pas actif dans notre application.
+Ainsi pour utiliser le two way binding sur un element de type formulaire on utilise `[(nGModel)]="LavaleurTSAuquelIlSeraLier"` .
+
+```{HTML}
+
+    <input
+      type="text"
+      placeholder="Entrer un commentaire"
+      [(ngModel)]="comment"
+    />
+    <p>COMMENTAIRE: {{ comment }}</p>
+```
+
+Ainsi chaque changement sur le champs qui est lier à votre variable sera impacter sur votre variable et donc votre variable enverra ses données dans le template HTML et le template HTML envera ses données dans le TypeScript.
+
+![Two-Way binding ou La liaison à double sens](/src/assets/images/docs/two-way-binding.png "Two-Way binding ou La liaison à double sens")
+
+### Transmettre les données vers un composant enfant
+
+  On peut passer des éléments à un component depuis son parent. et pour ça il va falloir créer une nouvelle propriété personnaliser depuis votre composant enfant mais qui peut être injecter depuis l’extérieur et pour faire cela on va utiliser le décorateur `@Input` que l’on va importer depuis `@angular/core` cet `Input` permet de rendre possible l’injection des propriétés depuis l’extérieur.
+
+et pour l’utiliser on fait :
+
+```tsx
+@Input() NameOfProps: TypeOfPropsImportFromModel
+```
+
+On appel le décorateur comme une fonction suivis du nom de la propriété qui sera considérer et puis deux point `“:”` et préciser son type.
+
+Pour qu'une propriété puisse être injectée **depuis l'extérieur** d'un component, il faut lui ajouter le décorateur  `@Input()`.
+
+`Input` doit êtr importer depuis  `@angular/core` , Maintenant, dans `app.component.ts` ou le parent de votre Component – créez une propriété du type de votre propriété et initialisez-la dans `ngOnInit()`.
+N'oubliez pas d'implémenter `OnInit` pour pouvoir utiliser `ngOnInit()` dans `AppComponent` ou dans votre composant parent !
+
+Vous allez maintenant utiliser l'**attribute binding** pour lier cette propriété que vous venez de créer à la propriété personnalisée créer dans votre composant enfant dans votre composant parent :
+
+`@Input()` crée comme un attribut HTML auquel on peut lier une valeur, tout comme vous l'avez fait avec l'attribut `src` de l'élément image !
+
+#### En resumer
+
+- Une propriété personnalisée est rendue injectable depuis l'extérieur grâce au décorateur `@Input()`.
+- Une propriété en `@Input()` est utilisable comme n'importe quelle autre propriété : on peut en afficher les éléments, les modifier…
+- On lie ensuite une valeur à cette propriété depuis le component parent avec l'attribute binding, c'est-à-dire le nom de la propriété entre crochets `[]` en passant la valeur entre les guillemets.
+
+![Transmettre les données vers un composant enfant](/src/assets/images/docs/data-to-child.png "Transmettre les données vers un composant enfant")
+
+### Transmettre des données d'un composant enfant vers un composant parant
+
+Pour recuperer les informations d'un composant et le renvoyer vers son parent nous auront besoins d'utiliser des evenements personnabliser, pour cela il faut integrer des nouvelles fonctionnalités dans notre composant enfant qui sont `Output` et `EventEmitter` et cela depuis `@angular/core`.
+On va ainsi utiliser le decorateur `@Output` pour créer un evenement, l'evenement en question sera un objet de la classe `EventEmitter`, par exemple
+
+```{TS}
+@Output info = new EventEmitter<string>();
+```
+
+ Puis dans une methode d'action comme `onLike` on va emmet l'evenement avec la methode `emit` qui va s'utiliser sur l'instance de la classe `EventEmitter` et donc.
+
+ ```{TS}
+ OnLike() {
+  this.price++;
+  this.info.emit(this.post.title); // va remonter le contenis de post.title au composant parent
+ }
+ ```
+
+Ainsi pour capturer l'evenement créer dans le composant enfant on peut ecouter cet evement d'une manière classique depuis le composant parent de votre application et lui associer un methode pour capturer la valeur inclus dans l'evement que l'on a emit depuis le composant enfant, cette methode en question on doit lui passer la proprieter `$event` qui lui contient la valeur des données passer dans le composant enfant.
+Ainsi

@@ -8,7 +8,7 @@ import { Post } from 'src/utils/types';
 })
 export class ArticleComponent {
   @Input() post!: Post;
-
+  comment: string = 'Ceci est un commentaire';
   onLike() {
     this.post.like++;
   }

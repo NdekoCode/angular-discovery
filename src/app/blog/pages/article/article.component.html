@@ -10,5 +10,12 @@
       like
     </button>
     <p>Number of like: {{ post.like }}</p>
+
+    <input
+      type="text"
+      placeholder="Entrer un commentaire"
+      [(ngModel)]="comment"
+    />
+    <p>COMMENTAIRE: {{ comment }}</p>
   </div>
 </div>

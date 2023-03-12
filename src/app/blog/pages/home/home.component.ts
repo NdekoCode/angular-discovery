@@ -8,6 +8,7 @@ import { Post } from 'src/utils/types';
 })
 export class HomeComponent implements OnInit {
   post!: Post;
+  message!: string;
   ngOnInit() {
     this.post = {
       title: 'Un article',
