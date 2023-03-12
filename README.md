@@ -296,4 +296,13 @@ On va ainsi utiliser le decorateur `@Output` pour créer un evenement, l'eveneme
  ```
 
 Ainsi pour capturer l'evenement créer dans le composant enfant on peut ecouter cet evement d'une manière classique depuis le composant parent de votre application et lui associer un methode pour capturer la valeur inclus dans l'evement que l'on a emit depuis le composant enfant, cette methode en question on doit lui passer la proprieter `$event` qui lui contient la valeur des données passer dans le composant enfant.
-Ainsi
+Ainsi le decorateur `@Output` nous donne la possibilité de créer un evenement personnaliser qui permet d'emmettre ses données depuis le composant enfant vers le composant parent
+
+![Transmettre des données d'un composant enfant vers un composant parant](/src/assets/images/docs/data-transfert-child-to-parent.png "Transmettre des données d'un composant enfant vers un composant parant")
+
+## Les directives
+
+Une directive est une classe qui vient rajouter du comportement à un element sur laquelle elle est poser, il existe deux sortes de directives
+
+- Les directives structurelles: `*ngIf` ET `*ngFor` (Enleve, ajoute, remplace) un element dans le DOM
+- Les directives d'attributs: `[(ngModel)]`, `[ngStyle]`,`[ngClass]`: Modifie l'apparence ou le comportement d'un element

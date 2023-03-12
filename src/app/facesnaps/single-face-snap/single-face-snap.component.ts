@@ -24,7 +24,6 @@ export class SingleFaceSnapComponent implements OnInit {
     this.faceSnap = this._snapService.getFaceSnapById(this.faceSnapId);
   }
   onSnap(arg: any) {
-    console.log(arg);
     if (this.isLiked) {
       this._snapService.snapFaceSnapById(this.faceSnap.id);
       this.isLiked = false;

@@ -1,8 +1,16 @@
 <div class="card col-md-3" style="width: 18rem">
   <img [src]="product.imageURL" class="card-img-top" [alt]="product.title" />
   <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
-    <h6>Prix: {{ product.price }}</h6>
+    <h5 class="card-title">
+      {{ product.title }}
+      <span class="badge rounded-pill bg-success" *ngIf="product.like > 1"
+        >Favoris</span
+      >
+      <span class="badge rounded-pill bg-danger" *ngIf="product.like <= 1"
+        >Déprécier</span
+      >
+    </h5>
+    <h6>Prix: {{ product.price | number }} $</h6>
     <p class="card-text">
       {{ product.description }}
     </p>
