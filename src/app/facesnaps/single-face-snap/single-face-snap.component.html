@@ -12,11 +12,11 @@
       [description]="faceSnap.description"
     ></app-card-body>
     <app-card-footer
+      (increment)="onSnap($event)"
       [createdDate]="faceSnap.createdDate"
       [snaps]="faceSnap.snaps"
       [isLiked]="isLiked"
       [location]="faceSnap.location"
-      (click)="onSnap()"
       *ngIf="faceSnap.snaps >= 1"
     ></app-card-footer>
   </main>

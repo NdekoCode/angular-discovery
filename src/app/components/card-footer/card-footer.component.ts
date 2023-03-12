@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-footer',
@@ -11,13 +11,8 @@ export class CardFooterComponent {
   @Input() createdDate!: Date;
   @Input() location?: string;
   @Input() funcProps!: Function;
+  @Output() increment = new EventEmitter<number>();
   onIncrement() {
-    if (this.isLiked) {
-      this.snaps--;
-      this.isLiked = false;
-    } else {
-      this.snaps++;
-      this.isLiked = true;
-    }
+    this.increment.emit(1);
   }
 }

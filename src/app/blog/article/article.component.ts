@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Post } from 'src/utils/types';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from 'src/utils/types';
 
 @Component({
   selector: 'app-article',
@@ -7,9 +7,11 @@ import { Post } from 'src/utils/types';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent {
-  @Input() post!: Post;
+  @Input() product!: Product;
+  @Output() info = new EventEmitter<string>();
   comment: string = 'Ceci est un commentaire';
   onLike() {
-    this.post.like++;
+    this.info.emit(this.product.title);
+    this.product.like++;
   }
 }

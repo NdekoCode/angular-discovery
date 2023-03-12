@@ -1,15 +1,15 @@
 <div class="card col-md-3" style="width: 18rem">
-  <img [src]="post.image" class="card-img-top" [alt]="post.title" />
+  <img [src]="product.imageURL" class="card-img-top" [alt]="product.title" />
   <div class="card-body">
-    <h5 class="card-title">{{ post.title }}</h5>
-    <h6>Prix: {{ post.price }}</h6>
+    <h5 class="card-title">{{ product.title }}</h5>
+    <h6>Prix: {{ product.price }}</h6>
     <p class="card-text">
-      {{ post.description }}
+      {{ product.description }}
     </p>
     <button type="button" (click)="onLike()" class="btn btn-primary">
       like
     </button>
-    <p>Number of like: {{ post.like }}</p>
+    <p>Number of like: {{ product.like }}</p>
 
     <input
       type="text"

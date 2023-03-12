@@ -16,6 +16,7 @@ import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list
 import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-fac
     ArticleComponent,
     FooterComponent,
     HomeComponent,
+    ArticleListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
