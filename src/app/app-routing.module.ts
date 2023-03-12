@@ -16,7 +16,6 @@ const routes: Routes = [
   },
   {
     path: 'facesnapHome',
-    // pathMatch: 'full',
     component: LandingPageComponent,
   },
   {
