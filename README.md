@@ -183,4 +183,117 @@ export class AppModule {
 Data-binding: liaison des données, c'est la communication entre votre code TypeScript et votre template HTML qui est montrer à l'utilisateur
 Cette communication peut prendre plusieurs forme comme:
 
-### string interpollation
+### string interpolation
+
+ `String interpolation` ou l'interpollation des texte permet de transferer les données du code typescript vers le template HTML.
+ Pour afficher du contenus en HTML dont la donnée est réaliter stocker dans une variable TypeScript on utilise le `string interpolation`
+
+```{HTML}
+ <p class="card-text">
+      {{ post.description }}
+  </p>
+```
+
+![STRING INTERPOLATION](/src/assets/images/docs/string-interpolation.png "STRING INTERPOLATION")
+
+### attribute binding ou property binding
+
+Le property binding est également appeler liaison par propriéter, il s'agit d'une autre manière de créer une communication dynamic entre votre TypeScript et votre template HTML.
+Celui-ci s'utilise meme sur les attribut HMTL ou les proprieter HTML sous forme de crocher `[]`, par exemple
+
+```{HTML}
+  <img [src]="post.image" class="card-img-top" [alt]="post.title" />
+```
+
+De cette façon ce que contient nos guillements ne seront plus interpreter comme etant du texte mais comme etant une expression TypeScript.
+
+![attribute binding ou property binding](/src/assets/images/docs/property-binding.png "attribute binding ou property binding")
+
+En resumer le propertie binding vous permet de recuperer une donnée présente dans votre TypeScript à fin de l'inserer dans votre template HTML, plus précisement pour la donnée comme valeur à l'attribut d'une balise HTML.
+
+### Event Binding
+
+A fin de rendre notre application dynamic il faut que l'utilisateur puisse interagir avec elle, pour cela nous utilisons des evenements comme le clic, le scroll ou l'ecriture sur un clavier.
+En Angular pour ajouter les evenement on utilise une syntaxe un peu similaire à celui des propertie binding mais à la passe des crochet on utilise les parenthèses `()` et à l'interieur de ces parenthèses on met le nom de l'evement à laquelle on va egaliser une fonction TypeScript qui sera executer quand l'utilisera va declencher cet evenement.
+Pour les methodes lier aux evenement il existe une convention de nomenclature qui dit que les methodes qui seront executer par des evenement devront commencer avec `on` suivit du nom de la fonction, cela permet de suivre plus facilement l'execution des methodes lorsque l'application devient plus complex.
+
+```{HTML}
+    <button type="button" (click)="onLike()" class="btn btn-primary">
+      like
+    </button>
+```
+
+![Event Binding](/src/assets/images/docs/event-binding.png "Event Binding")
+
+### Two-Way binding ou La liaison à double sens
+
+Jusqu'ici nous realisions une liaison uni-directionnelle, càd nous envoyons des données depuis notre code TypeScript vers le template HTML mais jusqu'à present nous ne pouvions pas faire le sens inverse càd envoyer des données du template HTML vers le TypeScript, le two-way binding va nous permettre de mettre en place cela.
+Le two-way binding utilise la liaison par proprieter et la liaison par evenement en meme temps voilà pourquoi sa syntaxe sont des crochet contenant des parathèse `[()]`, on l'utilise par exemple pour les formulaire à fin de pouvoir declarer ou recuperer le contenus des champs.
+
+Pour recuperer le contenus d'un champs pour l'envoyer du HMTL vers le typescript et ainsi utiliser le two-way binding il nous faudra importer le module `FormsModule` depuis `@angular/forms` dans `AppModule` et le mettre dans la clé `imports` de la liste se trouvant dans le docorateurs `@NgModule`.
+Si nous ne faisons pas cela, la fonctionnalité `two-way binding` ne sera pas actif dans notre application.
+Ainsi pour utiliser le two way binding sur un element de type formulaire on utilise `[(nGModel)]="LavaleurTSAuquelIlSeraLier"` .
+
+```{HTML}
+
+    <input
+      type="text"
+      placeholder="Entrer un commentaire"
+      [(ngModel)]="comment"
+    />
+    <p>COMMENTAIRE: {{ comment }}</p>
+```
+
+Ainsi chaque changement sur le champs qui est lier à votre variable sera impacter sur votre variable et donc votre variable enverra ses données dans le template HTML et le template HTML envera ses données dans le TypeScript.
+
+![Two-Way binding ou La liaison à double sens](/src/assets/images/docs/two-way-binding.png "Two-Way binding ou La liaison à double sens")
+
+### Transmettre les données vers un composant enfant
+
+  On peut passer des éléments à un component depuis son parent. et pour ça il va falloir créer une nouvelle propriété personnaliser depuis votre composant enfant mais qui peut être injecter depuis l’extérieur et pour faire cela on va utiliser le décorateur `@Input` que l’on va importer depuis `@angular/core` cet `Input` permet de rendre possible l’injection des propriétés depuis l’extérieur.
+
+et pour l’utiliser on fait :
+
+```tsx
+@Input() NameOfProps: TypeOfPropsImportFromModel
+```
+
+On appel le décorateur comme une fonction suivis du nom de la propriété qui sera considérer et puis deux point `“:”` et préciser son type.
+
+Pour qu'une propriété puisse être injectée **depuis l'extérieur** d'un component, il faut lui ajouter le décorateur  `@Input()`.
+
+`Input` doit êtr importer depuis  `@angular/core` , Maintenant, dans `app.component.ts` ou le parent de votre Component – créez une propriété du type de votre propriété et initialisez-la dans `ngOnInit()`.
+N'oubliez pas d'implémenter `OnInit` pour pouvoir utiliser `ngOnInit()` dans `AppComponent` ou dans votre composant parent !
+
+Vous allez maintenant utiliser l'**attribute binding** pour lier cette propriété que vous venez de créer à la propriété personnalisée créer dans votre composant enfant dans votre composant parent :
+
+`@Input()` crée comme un attribut HTML auquel on peut lier une valeur, tout comme vous l'avez fait avec l'attribut `src` de l'élément image !
+
+#### En resumer
+
+- Une propriété personnalisée est rendue injectable depuis l'extérieur grâce au décorateur `@Input()`.
+- Une propriété en `@Input()` est utilisable comme n'importe quelle autre propriété : on peut en afficher les éléments, les modifier…
+- On lie ensuite une valeur à cette propriété depuis le component parent avec l'attribute binding, c'est-à-dire le nom de la propriété entre crochets `[]` en passant la valeur entre les guillemets.
+
+![Transmettre les données vers un composant enfant](/src/assets/images/docs/data-to-child.png "Transmettre les données vers un composant enfant")
+
+### Transmettre des données d'un composant enfant vers un composant parant
+
+Pour recuperer les informations d'un composant et le renvoyer vers son parent nous auront besoins d'utiliser des evenements personnabliser, pour cela il faut integrer des nouvelles fonctionnalités dans notre composant enfant qui sont `Output` et `EventEmitter` et cela depuis `@angular/core`.
+On va ainsi utiliser le decorateur `@Output` pour créer un evenement, l'evenement en question sera un objet de la classe `EventEmitter`, par exemple
+
+```{TS}
+@Output info = new EventEmitter<string>();
+```
+
+ Puis dans une methode d'action comme `onLike` on va emmet l'evenement avec la methode `emit` qui va s'utiliser sur l'instance de la classe `EventEmitter` et donc.
+
+ ```{TS}
+ OnLike() {
+  this.price++;
+  this.info.emit(this.post.title); // va remonter le contenis de post.title au composant parent
+ }
+ ```
+
+Ainsi pour capturer l'evenement créer dans le composant enfant on peut ecouter cet evement d'une manière classique depuis le composant parent de votre application et lui associer un methode pour capturer la valeur inclus dans l'evement que l'on a emit depuis le composant enfant, cette methode en question on doit lui passer la proprieter `$event` qui lui contient la valeur des données passer dans le composant enfant.
+Ainsi

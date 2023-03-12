@@ -1,22 +1,22 @@
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './blog/components/footer/footer.component';
-import { NavbarComponent } from './blog/components/navbar/navbar.component';
-import { ArticleComponent } from './blog/pages/article/article.component';
-import { HomeComponent } from './blog/pages/home/home.component';
-import { CardBodyComponent } from './faceSnapsTutos/components/card-body/card-body.component';
-import { CardFooterComponent } from './faceSnapsTutos/components/card-footer/card-footer.component';
-import { HeaderComponent } from './faceSnapsTutos/components/header/header.component';
-import { ImageSnapComponent } from './faceSnapsTutos/components/image-snap/image-snap.component';
-import { FaceSnapListComponent } from './faceSnapsTutos/pages/face-snap-list/face-snap-list.component';
-import { FaceSnapComponent } from './faceSnapsTutos/pages/face-snap/face-snap.component';
-import { LandingPageComponent } from './faceSnapsTutos/pages/landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './faceSnapsTutos/pages/single-face-snap/single-face-snap.component';
+import { ArticleComponent } from './blog/article/article.component';
+import { HomeComponent } from './blog/home/home.component';
+import { CardBodyComponent } from './components/card-body/card-body.component';
+import { CardFooterComponent } from './components/card-footer/card-footer.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ImageSnapComponent } from './components/image-snap/image-snap.component';
+import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list.component';
+import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
+import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +30,11 @@ import { SingleFaceSnapComponent } from './faceSnapsTutos/pages/single-face-snap
     LandingPageComponent,
     SingleFaceSnapComponent,
     ArticleComponent,
-    NavbarComponent,
     FooterComponent,
     HomeComponent,
+    ArticleListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     {
       provide: LOCALE_ID,
