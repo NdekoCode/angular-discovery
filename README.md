@@ -103,3 +103,77 @@ Après avoir créer un composant, Angular appel les methodes des hooks de cycle 
 ### Creation d'un composant
 
 Pour créer un composant Angular, on utilise la ligne de commande en executant la commande `ng generate component NomDuComposant` ou `ng g c NomDuComposant`
+Ce qui va generer les 4 fichiers de composant dont:
+
+- un fichier pour le HTML
+- Un fichier pour le CSS
+- un fichier pour la logique TypeScript
+- Un fichier optionnel si nous souhaitons ajouter les test unitaires.
+
+## Comprendre les moduless
+
+Angular propose un concept de module à fin de mieux structurer le code et faciliter la réutilisation et le partage.
+Chaque application Angular a au moins un module appeler `AppModule` que nous retrouvons dans le fichier `app.module.ts`.
+Un module Angular est un mécanisme permettant de regrouper des composants ou des services, directives, pipes, de définir les dependance et de definir leurs visibilités.
+Un module Angular est définie grace à son décorateur `@NgModule()`, il est également définie grace à une classe ici `AppModule` qui reste généralement vide.
+Le décorateur `@NgModule` possède plusieurs proprieter
+
+- declaration: qui définie la liste des composants, si un composant ne fugure pas dans cette liste, Angular ne le detectera tout simplement pas et ne seront pas présent dans l'application.
+- imports: est une liste, celle-ci définie la liste de dépendance du module
+- providers: est une liste qui nous permet de definir les services à utiliser dans mon composant et ainsi dans les enfants de mon composant.
+- bootstrap: Est un tableau qui permet de définir le composant racine de l'application, autrement dit la vue principale de l'application qui heberge toutes les autres vues de l'application.
+
+```{TS}
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CardBodyComponent } from './card-body/card-body.component';
+import { CardFooterComponent } from './card-footer/card-footer.component';
+import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
+import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { HeaderComponent } from './header/header.component';
+import { ImageSnapComponent } from './image-snap/image-snap.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { ArticleComponent } from './article/article.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FaceSnapComponent,
+    ImageSnapComponent,
+    CardFooterComponent,
+    CardBodyComponent,
+    FaceSnapListComponent,
+    HeaderComponent,
+    LandingPageComponent,
+    SingleFaceSnapComponent,
+    ArticleComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr-FR',
+    },
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {
+  // Pour initiailiser le module de traitement de langue
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}
+
+```
