@@ -6,6 +6,7 @@ import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list
 import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'facesnap',
     // pathMatch: 'full',
     component: FaceSnapComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 @NgModule({

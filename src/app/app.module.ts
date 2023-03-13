@@ -18,6 +18,7 @@ import { LandingPageComponent } from './facesnaps/landing-page/landing-page.comp
 import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { SingleArticleComponent } from './blog/single-article/single-article.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SingleArticleComponent } from './blog/single-article/single-article.com
     HomeComponent,
     ArticleListComponent,
     SingleArticleComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
