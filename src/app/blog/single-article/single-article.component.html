@@ -1,4 +1,4 @@
-<div class="card col-md-3" style="width: 18rem">
+<div class="card container h-50">
   <img [src]="product.imageURL" class="card-img-top" [alt]="product.title" />
   <div class="card-body">
     <h5 class="card-title">
@@ -14,16 +14,6 @@
     <p class="card-text">
       {{ product.description }}
     </p>
-    <button type="button" (click)="onLike()" class="btn btn-primary">
-      like
-    </button>
     <p>Number of like: {{ product.like }}</p>
-    <a routerLink="/article/{{ product.id }}">Voir l'article</a>
-    <input
-      type="text"
-      placeholder="Entrer un commentaire"
-      [(ngModel)]="comment"
-    />
-    <p>COMMENTAIRE: {{ comment }}</p>
   </div>
 </div>

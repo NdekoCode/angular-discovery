@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './blog/home/home.component';
+import { SingleArticleComponent } from './blog/single-article/single-article.component';
 import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list.component';
 import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
@@ -9,6 +10,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+
+  {
+    path: 'article/:id',
+    component: SingleArticleComponent,
   },
   {
     path: 'facesnaps',
