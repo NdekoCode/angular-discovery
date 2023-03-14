@@ -344,6 +344,14 @@ function functionToCall(form: NgForm) {
 
 Une fois cette étape terminer il faudra lier nos variables TypeScript aux champs de nos Formulaire avec le `two-way binding` en utilisant `[(ngModel)]`
 
+#### Validation d'un formulaire basé sur un template
+
+Lorsque les champs sont vides et qu'on ne fait pas des verifications il est possible d'envoyer le formulaire et du coup on aura des données vides qui seront envoyer dans notre application, nous allons donc mettre des champs obligatoires et des règles de validation coté front comme `required`, `minlength`,`maxlength`,...
+Pour valider un champs avec angular il faut utiliser encore des variable des formulaire `ngModel` qui sont generalement précédet par `#` et puis sur cette variable créer on va obtenir un objet sur lequel on va utiliser les proprieter suivante:
+
+- `myVariable.invalid && (myVariable.dirty || myVariable.touched)` sont des proprieter booleen: `dirty` et `touched` sont des fonctionnalités qui vont empecher souvent nos message d'erreur du formulaire de s'afficher tant que l'utilisateur n'aura pas remplis le formulaire, `myVariable.invalid` est une proprieter qui est "false" si le formulaire est invalide selon les règles que l'on a specifier sur les champs.
+- `myVariable.errors` qui est un objet contenant en clé les règle de validation des formulaires HTML specifier dans nos champs et en valeur leurs valeurs en booleen pour dire si l'utilisateur à respecter ces regles ou non.
+
 ### Les formulaires réactifs
 
 Concernant les formulaires réactifs, ces derniers fournie un accès direct et explicite ou model objet du formulaire.
