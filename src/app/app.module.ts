@@ -19,6 +19,7 @@ import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-fac
 import { ArticleListComponent } from './article-list/article-list.component';
 import { SingleArticleComponent } from './blog/single-article/single-article.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ArticleListComponent,
     SingleArticleComponent,
     NotFoundComponent,
+    AddArticleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

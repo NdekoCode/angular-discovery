@@ -306,3 +306,21 @@ Une directive est une classe qui vient rajouter du comportement à un element su
 
 - Les directives structurelles: `*ngIf` ET `*ngFor` (Enleve, ajoute, remplace) un element dans le DOM
 - Les directives d'attributs: `[(ngModel)]`, `[ngStyle]`,`[ngClass]`: Modifie l'apparence ou le comportement d'un element
+
+## Utiliser les formulaires
+
+Dans Angular il existe deux methodes pour créer des formulaires,
+
+- Des formulaires basés sur un template (Template-driven Form)
+- Des formulaires réactif(Reactive Form)
+
+### formulaires basés sur un template (Template-driven)
+
+Les formulaires basés sur un template s'appuis sur la directive `ngModel` pour créer et manipuler le model d'objet soudjascent, ils sont utile pour ajouter un formulaire simple à une application comme un formulaire d'inscription par exemple
+Donc:
+
+- s'appuie sur la directive ngModel
+- Est utile  pour ajouter un formulaire simple
+- Est moins puissant que les formulaires react
+
+ Les formulaires basés sur un template sont très simple à ajoute dans une application mais il ne s'adapte pas aussi bien que les formulaires réactif
