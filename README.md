@@ -306,3 +306,54 @@ Une directive est une classe qui vient rajouter du comportement à un element su
 
 - Les directives structurelles: `*ngIf` ET `*ngFor` (Enleve, ajoute, remplace) un element dans le DOM
 - Les directives d'attributs: `[(ngModel)]`, `[ngStyle]`,`[ngClass]`: Modifie l'apparence ou le comportement d'un element
+
+## Utiliser les formulaires
+
+Dans Angular il existe deux methodes pour créer des formulaires :
+
+- Des formulaires basés sur un template (Template-driven Form)
+- Des formulaires réactif(Reactive Form)
+
+### formulaires basés sur un template (Template-driven)
+
+Les formulaires basés sur un template s'appuis sur la directive `ngModel` pour créer et manipuler le model d'objet soudjascent, ils sont utile pour ajouter un formulaire simple à une application comme un formulaire d'inscription ou de connexion par exemple, ces formulaires sont simple à ajouter à une application mais ils ne s'adaptent pas aussi bien que les formulaires réactifs.
+Si vous avez des exigences et une logique des formulaires très basique qui peuvent etre gerer uniquement dans le template , les formulaires basés sur un template pourrais etre un bon choix.
+Donc:
+
+- s'appuie sur la directive ngModel
+- Est utile  pour ajouter un formulaire simple
+- Est moins puissant que les formulaires react
+
+ Les formulaires basés sur un template sont très simple à ajoute dans une application mais il ne s'adapte pas aussi bien que les formulaires réactif.
+En nous basant sur un code HTML simple nous pouvons soumettre un formulaire HTML avec la directive evenementiel `(ngSubmit)="functionToCall()"` et cette directive prendre en egalité une fonction à appeler pour la soumission du formulaire.
+A fin que la methode qu'on passe à l'evenement `(ngSubmit)` puisse recuperer les informations de mon formulaire on doit devoir utiliser la directive `ngForm` et pour cela on va devoir ajouter un identifiant à mon formulaire qui sera preceder d'un `#` et l'egaliser à `ngForm` et passé à la methode à appeler cette valeur, par exemple  :
+
+```{HTML}
+<form (ngSubmit)="functionToCall(f)" #f="ngForm" action="LeLienOuOnEnvoisLeFormulaire">
+  <!-- Contenu du formulaire -->
+</form>
+```
+
+Et dans typescript
+
+```{TS}
+function functionToCall(form: NgForm) {
+  // traitement à faire
+}
+```
+
+Une fois cette étape terminer il faudra lier nos variables TypeScript aux champs de nos Formulaire avec le `two-way binding` en utilisant `[(ngModel)]`
+
+#### Validation d'un formulaire basé sur un template
+
+Lorsque les champs sont vides et qu'on ne fait pas des verifications il est possible d'envoyer le formulaire et du coup on aura des données vides qui seront envoyer dans notre application, nous allons donc mettre des champs obligatoires et des règles de validation coté front comme `required`, `minlength`,`maxlength`,...
+Pour valider un champs avec angular il faut utiliser encore des variable des formulaire `ngModel` qui sont generalement précédet par `#` et puis sur cette variable créer on va obtenir un objet sur lequel on va utiliser les proprieter suivante:
+
+- `myVariable.invalid && (myVariable.dirty || myVariable.touched)` sont des proprieter booleen: `dirty` et `touched` sont des fonctionnalités qui vont empecher souvent nos message d'erreur du formulaire de s'afficher tant que l'utilisateur n'aura pas remplis le formulaire, `myVariable.invalid` est une proprieter qui est "false" si le formulaire est invalide selon les règles que l'on a specifier sur les champs.
+- `myVariable.errors` qui est un objet contenant en clé les règle de validation des formulaires HTML specifier dans nos champs et en valeur leurs valeurs en booleen pour dire si l'utilisateur à respecter ces regles ou non.
+
+### Les formulaires réactifs
+
+Concernant les formulaires réactifs, ces derniers fournie un accès direct et explicite ou model objet du formulaire.
+Par rapport aux formulaires basés sur un template ils sont plus robuste, ils sont egalement plus evolutifs,réutilisable et testable.
+Si les formulaires sont un element clés de votre application, utiliser des formulaires réactifs sera le meilleur choix.

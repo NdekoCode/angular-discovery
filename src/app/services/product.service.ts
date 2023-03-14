@@ -8,5 +8,11 @@ export class ProductService {
   getAllProducts() {
     return this.products;
   }
-  constructor() {}
+  getProductById(productId: string | number): Product {
+    const product: Product = this.products.find(
+      (p) => p.id === productId
+    ) as Product;
+
+    return product;
+  }
 }

@@ -1,0 +1,52 @@
+<div class="container">
+  <h2 clas="align-center">Ajouter un nouvel article</h2>
+  <form
+    action=""
+    class="needs-validation"
+    (ngSubmit)="formSubmit(f)"
+    #f="ngForm"
+    class="mb-5"
+  >
+    <div class="mb-3">
+      <label for="title">Titre</label>
+      <input
+        id="title"
+        type="text"
+        class="form-control"
+        name="title"
+        [(ngModel)]="title"
+        required
+        minlength="4"
+        #formTitle="ngModel"
+      />
+      <div *ngIf="formTitle.invalid && (formTitle.dirty || formTitle.touched)">
+        <div *ngIf="formTitle.errors?.['required']">Titre obligatoire</div>
+
+        <div *ngIf="formTitle.errors?.['minlength']">
+          Le titre doit avoir un minimum de 4 caractère
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="price">Prix</label>
+      <input
+        id="price"
+        type="text"
+        name="price"
+        [(ngModel)]="price"
+        class="form-control"
+        required
+        #formPrice="ngModel"
+      />
+      <div *ngIf="formPrice.invalid && (formPrice.dirty || formPrice.touched)">
+        <div *ngIf="formPrice.errors?.['required']">
+          Le prix est obligatoire
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary" [disabled]="!f.valid">
+      Valider
+    </button>
+  </form>
+</div>

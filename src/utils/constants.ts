@@ -1,5 +1,4 @@
 import { FaceSnap } from 'src/app/models/face-snap.model';
-
 export const faceSnapsData: FaceSnap[] = [
   {
     id: 1,
@@ -63,6 +62,7 @@ export const faceSnapsData: FaceSnap[] = [
 ];
 export const products = [
   {
+    id: 1,
     title: 'iPhone 9',
     description: 'An apple mobile which is nothing like apple',
     price: 549,
@@ -76,6 +76,7 @@ export const products = [
     like: 9,
   },
   {
+    id: 2,
     title: 'iPhone X',
     description:
       'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
@@ -89,6 +90,7 @@ export const products = [
     like: 5,
   },
   {
+    id: 3,
     title: 'Samsung Universe 9',
     description:
       "Samsung's new variant which goes beyond Galaxy to the Universe",
@@ -102,6 +104,7 @@ export const products = [
     like: 4,
   },
   {
+    id: 4,
     title: 'OPPOF19',
     description: 'OPPO F19 is officially announced on April 2021.',
     price: 280,
@@ -114,6 +117,7 @@ export const products = [
     like: 1,
   },
   {
+    id: 5,
     title: 'Huawei P30',
     description:
       'Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.',
@@ -127,6 +131,7 @@ export const products = [
     like: 3,
   },
   {
+    id: 6,
     title: 'MacBook Pro',
     description:
       'MacBook Pro 2021 with mini-LED display may launch between September, November',

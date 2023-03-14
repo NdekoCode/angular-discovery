@@ -7,6 +7,7 @@ export type Post = {
   [key: string]: string | number;
 };
 export type Product = {
+  id: string | number;
   title: string;
   price: number;
   description: string;
