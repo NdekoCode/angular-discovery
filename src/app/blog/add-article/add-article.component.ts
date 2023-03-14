@@ -9,10 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AddArticleComponent {
   title!: string;
   price!: number;
-
-  onSubmit(form: NgForm) {
-    console.log('TITRE: ' + this.title);
-    console.log('PRIX: ' + this.price);
-    console.log(form);
+  formSubmit(form: NgForm) {
+    console.log('TITLE : ', this.title, 'PRIX: ', this.price);
   }
 }

@@ -5,8 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddArticleComponent } from './blog/add-article/add-article.component';
+import { ArticleListComponent } from './blog/article-list/article-list.component';
 import { ArticleComponent } from './blog/article/article.component';
 import { HomeComponent } from './blog/home/home.component';
+import { SingleArticleComponent } from './blog/single-article/single-article.component';
 import { CardBodyComponent } from './components/card-body/card-body.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,10 +19,7 @@ import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list
 import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
-import { ArticleListComponent } from './article-list/article-list.component';
-import { SingleArticleComponent } from './blog/single-article/single-article.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AddArticleComponent } from './add-article/add-article.component';
 
 @NgModule({
   declarations: [

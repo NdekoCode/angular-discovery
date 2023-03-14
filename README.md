@@ -309,18 +309,43 @@ Une directive est une classe qui vient rajouter du comportement à un element su
 
 ## Utiliser les formulaires
 
-Dans Angular il existe deux methodes pour créer des formulaires,
+Dans Angular il existe deux methodes pour créer des formulaires :
 
 - Des formulaires basés sur un template (Template-driven Form)
 - Des formulaires réactif(Reactive Form)
 
 ### formulaires basés sur un template (Template-driven)
 
-Les formulaires basés sur un template s'appuis sur la directive `ngModel` pour créer et manipuler le model d'objet soudjascent, ils sont utile pour ajouter un formulaire simple à une application comme un formulaire d'inscription par exemple
+Les formulaires basés sur un template s'appuis sur la directive `ngModel` pour créer et manipuler le model d'objet soudjascent, ils sont utile pour ajouter un formulaire simple à une application comme un formulaire d'inscription ou de connexion par exemple, ces formulaires sont simple à ajouter à une application mais ils ne s'adaptent pas aussi bien que les formulaires réactifs.
+Si vous avez des exigences et une logique des formulaires très basique qui peuvent etre gerer uniquement dans le template , les formulaires basés sur un template pourrais etre un bon choix.
 Donc:
 
 - s'appuie sur la directive ngModel
 - Est utile  pour ajouter un formulaire simple
 - Est moins puissant que les formulaires react
 
- Les formulaires basés sur un template sont très simple à ajoute dans une application mais il ne s'adapte pas aussi bien que les formulaires réactif
+ Les formulaires basés sur un template sont très simple à ajoute dans une application mais il ne s'adapte pas aussi bien que les formulaires réactif.
+En nous basant sur un code HTML simple nous pouvons soumettre un formulaire HTML avec la directive evenementiel `(ngSubmit)="functionToCall()"` et cette directive prendre en egalité une fonction à appeler pour la soumission du formulaire.
+A fin que la methode qu'on passe à l'evenement `(ngSubmit)` puisse recuperer les informations de mon formulaire on doit devoir utiliser la directive `ngForm` et pour cela on va devoir ajouter un identifiant à mon formulaire qui sera preceder d'un `#` et l'egaliser à `ngForm` et passé à la methode à appeler cette valeur, par exemple  :
+
+```{HTML}
+<form (ngSubmit)="functionToCall(f)" #f="ngForm" action="LeLienOuOnEnvoisLeFormulaire">
+  <!-- Contenu du formulaire -->
+</form>
+```
+
+Et dans typescript
+
+```{TS}
+function functionToCall(form: NgForm) {
+  // traitement à faire
+}
+```
+
+Une fois cette étape terminer il faudra lier nos variables TypeScript aux champs de nos Formulaire avec le `two-way binding` en utilisant `[(ngModel)]`
+
+### Les formulaires réactifs
+
+Concernant les formulaires réactifs, ces derniers fournie un accès direct et explicite ou model objet du formulaire.
+Par rapport aux formulaires basés sur un template ils sont plus robuste, ils sont egalement plus evolutifs,réutilisable et testable.
+Si les formulaires sont un element clés de votre application, utiliser des formulaires réactifs sera le meilleur choix.

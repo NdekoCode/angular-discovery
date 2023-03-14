@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddArticleComponent } from './add-article/add-article.component';
+import { AddArticleComponent } from './blog/add-article/add-article.component';
 import { HomeComponent } from './blog/home/home.component';
 import { SingleArticleComponent } from './blog/single-article/single-article.component';
 import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list.component';

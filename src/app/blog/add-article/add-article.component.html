@@ -1,14 +1,14 @@
 <div class="container">
   <h2 clas="align-center">Ajouter un nouvel article</h2>
-  <form action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form action="" (ngSubmit)="formSubmit(f)" #f="ngForm" class="mb-5">
     <div class="mb-3">
       <label for="title">Titre</label>
       <input
         id="title"
         type="text"
-        [(ngModel)]="title"
         name="title"
         class="form-control"
+        [(ngModel)]="title"
         required
         minleng="4"
       />
@@ -19,15 +19,13 @@
       <input
         id="price"
         type="text"
-        [(ngModel)]="price"
         name="price"
+        [(ngModel)]="price"
         class="form-control"
         required
         minleng="4"
       />
-
-      required minleng="4"
     </div>
-    <button type="submit">Valider</button>
+    <button type="submit" class="btn btn-secondary">Valider</button>
   </form>
 </div>
