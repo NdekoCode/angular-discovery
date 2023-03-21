@@ -10,6 +10,7 @@ import { ArticleListComponent } from './blog/article-list/article-list.component
 import { ArticleComponent } from './blog/article/article.component';
 import { HomeComponent } from './blog/home/home.component';
 import { SingleArticleComponent } from './blog/single-article/single-article.component';
+import { UpdateArticleComponent } from './blog/update-article/update-article.component';
 import { CardBodyComponent } from './components/card-body/card-body.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -39,6 +40,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SingleArticleComponent,
     NotFoundComponent,
     AddArticleComponent,
+    UpdateArticleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

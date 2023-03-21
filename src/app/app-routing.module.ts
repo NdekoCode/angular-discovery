@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddArticleComponent } from './blog/add-article/add-article.component';
 import { HomeComponent } from './blog/home/home.component';
 import { SingleArticleComponent } from './blog/single-article/single-article.component';
+import { UpdateArticleComponent } from './blog/update-article/update-article.component';
 import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list.component';
 import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
@@ -39,6 +40,11 @@ const routes: Routes = [
     path: 'add-article',
     // pathMatch: 'full',
     component: AddArticleComponent,
+  },
+  {
+    path: 'update-article',
+    // pathMatch: 'full',
+    component: UpdateArticleComponent,
   },
   {
     path: '**',
