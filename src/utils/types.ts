@@ -19,3 +19,4 @@ export type Product = {
   brand?: string;
   category?: string;
 };
+export type ProductData = { products: Product[] };

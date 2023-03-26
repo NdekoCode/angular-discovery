@@ -1,4 +1,5 @@
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import * as fr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -42,7 +43,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AddArticleComponent,
     UpdateArticleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: LOCALE_ID,
