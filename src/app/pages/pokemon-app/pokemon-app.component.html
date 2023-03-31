@@ -1,8 +1,20 @@
-<p>pokemon-app works!</p>
-<div>
-  <ul>
-    <li *ngFor="let pokemon of pokemonList" (click)="selectPokemon(pokemon)">
-      {{ pokemon }}
+<div class="container">
+  <ul class="row">
+    <li
+      *ngFor="let pokemon of pokemonList"
+      (click)="selectPokemon(pokemon)"
+      class="col-md-4 gap-3"
+    >
+      <article class="card shadow cursor-pointer mb-3">
+        <header
+          class="card-header d-flex justify-content-center align-items-center"
+        >
+          <img [src]="pokemon.picture" [alt]="pokemon.name" />
+        </header>
+        <div class="card-body">
+          {{ pokemon.name }}
+        </div>
+      </article>
     </li>
   </ul>
 </div>

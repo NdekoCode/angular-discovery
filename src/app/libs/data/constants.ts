@@ -146,7 +146,7 @@ export const products = [
     like: 1,
   },
 ];
-export const pokemonData: Pokemon[] = [
+export const POKEMONS: Pokemon[] = [
   {
     id: 1,
     name: 'Bulbizarre',
