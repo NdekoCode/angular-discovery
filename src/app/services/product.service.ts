@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product, ProductData } from 'src/utils/types';
+import { Product, ProductData } from 'src/app/libs/utils/types';
 
 @Injectable()
 export class ProductService {

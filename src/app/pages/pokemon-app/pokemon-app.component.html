@@ -1,0 +1,8 @@
+<p>pokemon-app works!</p>
+<div>
+  <ul>
+    <li *ngFor="let pokemon of pokemonList" (click)="selectPokemon(pokemon)">
+      {{ pokemon }}
+    </li>
+  </ul>
+</div>

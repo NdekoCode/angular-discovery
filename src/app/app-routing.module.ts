@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddArticleComponent } from './blog/add-article/add-article.component';
-import { HomeComponent } from './blog/home/home.component';
-import { SingleArticleComponent } from './blog/single-article/single-article.component';
-import { UpdateArticleComponent } from './blog/update-article/update-article.component';
-import { FaceSnapListComponent } from './facesnaps/face-snap-list/face-snap-list.component';
-import { FaceSnapComponent } from './facesnaps/face-snap/face-snap.component';
-import { LandingPageComponent } from './facesnaps/landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './facesnaps/single-face-snap/single-face-snap.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { AddArticleComponent } from './pages/blog/add-article/add-article.component';
+import { HomeComponent } from './pages/blog/home/home.component';
+import { SingleArticleComponent } from './pages/blog/single-article/single-article.component';
+import { UpdateArticleComponent } from './pages/blog/update-article/update-article.component';
+import { FaceSnapListComponent } from './pages/facesnaps/face-snap-list/face-snap-list.component';
+import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.component';
+import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
 const routes: Routes = [
   {
     path: '',
@@ -45,6 +46,10 @@ const routes: Routes = [
     path: 'update-article',
     // pathMatch: 'full',
     component: UpdateArticleComponent,
+  },
+  {
+    path: 'pokemon-app',
+    component: PokemonAppComponent,
   },
   {
     path: '**',

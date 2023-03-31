@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Observable, Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { Product, ProductData } from 'src/utils/types';
-import { ProductService } from '../../services/product.service';
+import { Product, ProductData } from 'src/app/libs/utils/types';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-article-list',
