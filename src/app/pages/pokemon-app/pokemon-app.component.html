@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="mb-3">
+    <input
+      type="number"
+      placeholder="Entrer l'identifiant du pokemon à rechercher"
+      class="form-control shadow-sm"
+      (input)="takePokemon($event)"
+    />
+  </div>
+  <ul class="row">
+    <li
+      *ngFor="let pokemon of filterPokemonList"
+      (click)="selectPokemon(pokemon)"
+      class="col-md-4 gap-3"
+    >
+      <article class="card shadow-sm border cursor-pointer mb-3">
+        <header
+          class="card-header d-flex justify-content-center align-items-center"
+        >
+          <img [src]="pokemon.picture" [alt]="pokemon.name" />
+        </header>
+        <div class="card-body">
+          {{ pokemon.name }}
+        </div>
+      </article>
+    </li>
+  </ul>
+</div>

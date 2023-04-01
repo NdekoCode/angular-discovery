@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/libs/utils/types';
 import { ProductService } from 'src/app/services/product.service';
-import { Product } from 'src/utils/types';
 
 @Component({
   selector: 'app-single-article',

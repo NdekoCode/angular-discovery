@@ -1,10 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { products } from 'src/utils/constants';
-import { Product } from 'src/utils/types';
+import { Product, ProductData } from 'src/app/libs/utils/types';
 
 @Injectable()
 export class ProductService {
-  products: Product[] = products;
+  products: any[] = [];
+  constructor(private _httpClient: HttpClient) {}
   getAllProducts() {
     return this.products;
   }
@@ -14,5 +15,8 @@ export class ProductService {
     ) as Product;
 
     return product;
+  }
+  getProductsFromServer() {
+    return this._httpClient.get<ProductData>('/assets/data/products.json');
   }
 }

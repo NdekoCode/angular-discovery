@@ -357,3 +357,10 @@ Pour valider un champs avec angular il faut utiliser encore des variable des for
 Concernant les formulaires réactifs, ces derniers fournie un accès direct et explicite ou model objet du formulaire.
 Par rapport aux formulaires basés sur un template ils sont plus robuste, ils sont egalement plus evolutifs,réutilisable et testable.
 Si les formulaires sont un element clés de votre application, utiliser des formulaires réactifs sera le meilleur choix.
+
+Pour pouvoir utiliser les formulaires réactifs dans notre application Angular, nous avons avons besoin d'ajouter une fonctionnalités depuis notre module `AppModule` qui est dans le fichier `app.module.ts` et cette fonctionnalité c'est `ReactiveFormsModule` depuis `@angular/forms` et l'ajouter dans les `imports` des notre application `Angular`.
+
+Si la fonctionnalité `ReactiveFormsModule` n'est pas activer dans les `imports` alors les formulaires réactifs ne seront pas actif dans votre application, ces derniers ne fonctionnerons tout simplement pas !
+
+Pour maintenant rendre notre formulaire réactif il faut utiliser le mot clé `formControl` dans des crochets càd `[formControl]` et la relier à une variable `TypeScript` de notre composant, puis on va aller dans fichier composant TypeScript et installer la fonctionnalité `FormControl` et cela depuis `@angular/forms` et transformer chaque variable TypeScript qui est relier à la directive `[formControl]` dans le block HMTL en une instance de la classe `FormControl` c-à-d par exemple
+`title = new FormControl('')` à fin d'avoir un objet basé sur `FormControl`, ainsi sur chaque objet de notre instance pour acceder à la valeur il faudra utiliser la proprieter `.value` sur l'objet créer basé sur `FormControl`.

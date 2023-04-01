@@ -1,4 +1,5 @@
-import { FaceSnap } from 'src/app/models/face-snap.model';
+import { FaceSnap } from 'src/app/libs/models/face-snap.model';
+import { Pokemon } from '../models/pokemon.model';
 export const faceSnapsData: FaceSnap[] = [
   {
     id: 1,
@@ -143,5 +144,169 @@ export const products = [
     category: 'laptops',
     imageURL: 'https://dummyjson.com/image/i/products/6/thumbnail.png',
     like: 1,
+  },
+];
+export const POKEMONS: Pokemon[] = [
+  {
+    id: 1,
+    name: 'Bulbizarre',
+    hp: 25,
+    cp: 5,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',
+    types: ['Plante', 'Poison'],
+    createdAt: new Date(),
+  },
+  {
+    id: 2,
+    name: 'Salamèche',
+    hp: 28,
+    cp: 6,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png',
+    types: ['Feu'],
+    createdAt: new Date(),
+  },
+  {
+    id: 3,
+    name: 'Carapuce',
+    hp: 21,
+    cp: 4,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png',
+    types: ['Eau'],
+    createdAt: new Date(),
+  },
+  {
+    id: 4,
+    name: 'Aspicot',
+    hp: 16,
+    cp: 2,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png',
+    types: ['Insecte', 'Poison'],
+    createdAt: new Date(),
+  },
+  {
+    id: 5,
+    name: 'Roucool',
+    hp: 30,
+    cp: 7,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png',
+    types: ['Normal', 'Vol'],
+    createdAt: new Date(),
+  },
+  {
+    id: 6,
+    name: 'Rattata',
+    hp: 18,
+    cp: 6,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png',
+    types: ['Normal'],
+    createdAt: new Date(),
+  },
+  {
+    id: 7,
+    name: 'Piafabec',
+    hp: 14,
+    cp: 5,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/021.png',
+    types: ['Normal', 'Vol'],
+    createdAt: new Date(),
+  },
+  {
+    id: 8,
+    name: 'Abo',
+    hp: 16,
+    cp: 4,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png',
+    types: ['Poison'],
+    createdAt: new Date(),
+  },
+  {
+    id: 9,
+    name: 'Pikachu',
+    hp: 21,
+    cp: 7,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png',
+    types: ['Electrik'],
+    createdAt: new Date(),
+  },
+  {
+    id: 10,
+    name: 'Sabelette',
+    hp: 19,
+    cp: 3,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png',
+    types: ['Normal'],
+    createdAt: new Date(),
+  },
+  {
+    id: 11,
+    name: 'Mélofée',
+    hp: 25,
+    cp: 5,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png',
+    types: ['Fée'],
+    createdAt: new Date(),
+  },
+  {
+    id: 12,
+    name: 'Groupix',
+    hp: 17,
+    cp: 8,
+    picture:
+      'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png',
+    types: ['Feu'],
+    createdAt: new Date(),
+  },
+];
+export const booksData = [
+  {
+    author: 'Chinua Achebe',
+    country: 'Nigeria',
+    imageLink: 'images/things-fall-apart.jpg',
+    language: 'English',
+    link: 'https://en.wikipedia.org/wiki/Things_Fall_Apart\n',
+    pages: 209,
+    title: 'Things Fall Apart',
+    year: 1958,
+  },
+  {
+    author: 'Hans Christian Andersen',
+    country: 'Denmark',
+    imageLink: 'images/fairy-tales.jpg',
+    language: 'Danish',
+    link: 'https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\n',
+    pages: 784,
+    title: 'Fairy tales',
+    year: 1836,
+  },
+  {
+    author: 'Dante Alighieri',
+    country: 'Italy',
+    imageLink: 'images/the-divine-comedy.jpg',
+    language: 'Italian',
+    link: 'https://en.wikipedia.org/wiki/Divine_Comedy\n',
+    pages: 928,
+    title: 'The Divine Comedy',
+    year: 1315,
+  },
+  {
+    author: 'Unknown',
+    country: 'Sumer and Akkadian Empire',
+    imageLink: 'images/the-epic-of-gilgamesh.jpg',
+    language: 'Akkadian',
+    link: 'https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n',
+    pages: 160,
+    title: 'The Epic Of Gilgamesh',
+    year: -1700,
   },
 ];

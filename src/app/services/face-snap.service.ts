@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { faceSnapsData } from 'src/utils/constants';
-import { FaceSnap } from '../models/face-snap.model';
+import { faceSnapsData } from '../libs/data/constants';
+import { FaceSnap } from '../libs/models/face-snap.model';
 
 @Injectable({
   providedIn: 'root',
