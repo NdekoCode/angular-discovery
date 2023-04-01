@@ -10,11 +10,22 @@ import { Pokemon } from './../../libs/models/pokemon.model';
 export class PokemonAppComponent {
   title!: string;
   pokemonList: Pokemon[] = POKEMONS;
+  filterPokemonList: Pokemon[] = POKEMONS;
   ngOnInit(): void {
-    console.log(this.pokemonList);
+    console.table(this.pokemonList);
   }
 
   selectPokemon(pokemon: Pokemon) {
     console.log(pokemon);
+  }
+  takePokemon(arg: Event) {
+    const target = arg.target as HTMLInputElement;
+    if (target.value) {
+      this.filterPokemonList = this.pokemonList.filter(
+        (p) => p.id === parseInt(target.value)
+      );
+    } else {
+      this.filterPokemonList = this.pokemonList;
+    }
   }
 }
