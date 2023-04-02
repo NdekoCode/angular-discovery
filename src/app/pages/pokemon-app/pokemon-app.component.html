@@ -7,6 +7,27 @@
       (input)="takePokemon($event)"
     />
   </div>
+  <div class="mb-3">
+    <input
+      #input
+      type="text"
+      placeholder="new Input"
+      (keyup)="(0)"
+      class="form-control shadow-sm"
+    />
+  </div>
+
+  <div class="mb-3">
+    <input
+      #inputEnter
+      type="text"
+      placeholder="Test avec la touche entrer"
+      (keyup.enter)="getEnterDate(inputEnter.value)"
+      class="form-control shadow-sm"
+    />
+  </div>
+  <div class="mb-3">{{ input.value }}</div>
+  <div class="mb-3">{{ inputEnter.value }}</div>
   <ul class="row">
     <li
       *ngFor="let pokemon of filterPokemonList"

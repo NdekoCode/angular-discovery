@@ -22,10 +22,13 @@ export class PokemonAppComponent {
     const target = arg.target as HTMLInputElement;
     if (target.value) {
       this.filterPokemonList = this.pokemonList.filter(
-        (p) => p.id === parseInt(target.value)
+        (p) => p.id === +target.value
       );
     } else {
       this.filterPokemonList = this.pokemonList;
     }
+  }
+  getEnterDate(arg: string) {
+    console.log(arg);
   }
 }
