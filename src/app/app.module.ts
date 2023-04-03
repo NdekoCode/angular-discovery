@@ -11,6 +11,7 @@ import { CardFooterComponent } from './components/card-footer/card-footer.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ImageSnapComponent } from './components/image-snap/image-snap.component';
+import { BorderCardDirective } from './directives/border-card.directive';
 import { AddArticleComponent } from './pages/blog/add-article/add-article.component';
 import { ArticleListComponent } from './pages/blog/article-list/article-list.component';
 import { ArticleComponent } from './pages/blog/article/article.component';
@@ -44,6 +45,7 @@ import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
     AddArticleComponent,
     UpdateArticleComponent,
     PokemonAppComponent,
+    BorderCardDirective,
   ],
   imports: [
     BrowserModule,
