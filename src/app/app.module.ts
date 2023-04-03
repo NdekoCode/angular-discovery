@@ -24,6 +24,7 @@ import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-pag
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
+import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
     UpdateArticleComponent,
     PokemonAppComponent,
     BorderCardDirective,
+    PokemonTypeColorPipe,
   ],
   imports: [
     BrowserModule,
