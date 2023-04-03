@@ -1,0 +1,26 @@
+.card {
+    display       : flex;
+    flex-wrap     : wrap;
+    flex-direction: row;
+    gap           : 5px;
+    padding       : 10px;
+    width         : 100%;
+
+}
+
+.fadeUp {
+    animation: backwards 0.35s fadeUp;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity  : 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+
+}
