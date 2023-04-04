@@ -18,12 +18,13 @@ import { ArticleComponent } from './pages/blog/article/article.component';
 import { HomeComponent } from './pages/blog/home/home.component';
 import { SingleArticleComponent } from './pages/blog/single-article/single-article.component';
 import { UpdateArticleComponent } from './pages/blog/update-article/update-article.component';
+import { DetailPokemonComponent } from './pages/detail-pokemon/detail-pokemon.component';
 import { FaceSnapListComponent } from './pages/facesnaps/face-snap-list/face-snap-list.component';
 import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
+import { ListPokemonComponent } from './pages/list-pokemon/list-pokemon.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
 import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
 
 @NgModule({
@@ -45,9 +46,10 @@ import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
     NotFoundComponent,
     AddArticleComponent,
     UpdateArticleComponent,
-    PokemonAppComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
+    ListPokemonComponent,
+    DetailPokemonComponent,
   ],
   imports: [
     BrowserModule,

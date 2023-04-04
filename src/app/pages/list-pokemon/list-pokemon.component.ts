@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
+
 import { POKEMONS } from './../../libs/data/constants';
 import { Pokemon } from './../../libs/models/pokemon.model';
-
 @Component({
-  selector: 'app-pokemon-app',
-  templateUrl: './pokemon-app.component.html',
-  styleUrls: ['./pokemon-app.component.scss'],
+  selector: 'app-list-pokemon',
+  templateUrl: './list-pokemon.component.html',
+  styleUrls: ['./list-pokemon.component.scss'],
 })
-export class PokemonAppComponent {
+export class ListPokemonComponent {
   title!: string;
   pokemonList: Pokemon[] = POKEMONS;
   filterPokemonList: Pokemon[] = POKEMONS;

@@ -1,0 +1,54 @@
+<section *ngIf="pokemon; else ngElse" class="section">
+  <div *ngIf="pokemon" class="row">
+    <div class="col-md-6 col-md-12 m-8">
+      <h2 class="header text-center">{{ pokemon.name }}</h2>
+      <div class="single-card">
+        <div class="card-image">
+          <img [src]="pokemon.picture" [alt]="pokemon.name" />
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <table class="table table-striped" aria-describedby="Pokemon">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Points de vie</th>
+                  <th>Dégâts</th>
+                  <th>Types</th>
+                  <th>Date de création</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>{{ pokemon.name }}</strong>
+                  </td>
+                  <td>
+                    <strong>{{ pokemon.hp }}</strong>
+                  </td>
+                  <td>
+                    <strong>{{ pokemon.cp }}</strong>
+                  </td>
+                  <td>
+                    <span
+                      *ngFor="let type of pokemon.types"
+                      class="{{ type | pokemonTypeColor }}"
+                      >{{ type }}</span
+                    >
+                  </td>
+                  <td>
+                    <em>{{ pokemon.createdAt | date : "dd/MM/yyyy" }}</em>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-action">
+            <!-- <a (click)="goBack()">Retour</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #ngElse> Pas de POKEMON trouver </ng-template>
