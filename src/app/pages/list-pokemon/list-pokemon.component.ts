@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { POKEMONS } from './../../libs/data/constants';
 import { Pokemon } from './../../libs/models/pokemon.model';
@@ -11,6 +12,7 @@ export class ListPokemonComponent {
   title!: string;
   pokemonList: Pokemon[] = POKEMONS;
   filterPokemonList: Pokemon[] = POKEMONS;
+  constructor(private _router: Router) {}
   ngOnInit(): void {
     console.table(this.pokemonList);
   }
@@ -30,5 +32,8 @@ export class ListPokemonComponent {
   }
   getEnterDate(arg: string) {
     console.log(arg);
+  }
+  goToPokemon(pokemon: Pokemon) {
+    this._router.navigate(['/pokemon', pokemon.id]);
   }
 }

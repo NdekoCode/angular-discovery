@@ -1,16 +1,22 @@
-<section *ngIf="pokemon; else ngElse" class="section">
+<section *ngIf="pokemon; else ngElse" class="section container">
+  <div class="card-action">
+    <a (click)="goBack()" class="btn btn-link">Retour</a>
+  </div>
   <div *ngIf="pokemon" class="row">
     <div class="col-md-6 col-md-12 m-8">
-      <h2 class="header text-center">{{ pokemon.name }}</h2>
+      <h2 class="text-center">{{ pokemon.name }}</h2>
       <div class="single-card">
         <div class="card-image">
           <img [src]="pokemon.picture" [alt]="pokemon.name" />
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <table class="table table-striped" aria-describedby="Pokemon">
+            <table
+              class="table d-flex table-striped"
+              aria-describedby="Pokemon"
+            >
               <thead>
-                <tr>
+                <tr class="d-flex flex-column">
                   <th>Nom</th>
                   <th>Points de vie</th>
                   <th>Dégâts</th>
@@ -19,7 +25,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="d-flex flex-column">
                   <td>
                     <strong>{{ pokemon.name }}</strong>
                   </td>
@@ -42,9 +48,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="card-action">
-            <!-- <a (click)="goBack()">Retour</a> -->
           </div>
         </div>
       </div>

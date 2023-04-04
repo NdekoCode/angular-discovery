@@ -35,10 +35,10 @@
       (click)="selectPokemon(pokemon)"
       class="col-md-4 gap-3"
     >
-      <a
+      <article
+        (click)="goToPokemon(pokemon)"
         class="card shadow fadeUp cursor-pointer mb-3"
         appBorderCard="#7AA874"
-        [routerLink]="'/pokemon/' + pokemon.id"
       >
         <header
           class="card-header d-flex justify-content-center align-items-center"
@@ -54,7 +54,7 @@
             >{{ type }}</span
           >
         </div>
-      </a>
+      </article>
     </li>
   </ul>
 </div>
