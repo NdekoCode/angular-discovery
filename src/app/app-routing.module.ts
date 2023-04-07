@@ -9,7 +9,6 @@ import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.compone
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
 const routes: Routes = [
   {
     path: '',
@@ -48,16 +47,11 @@ const routes: Routes = [
     component: UpdateArticleComponent,
   },
   {
-    path: 'pokemon-app',
-    component: PokemonAppComponent,
-  },
-  {
     path: '**',
     component: NotFoundComponent,
   },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
 })
 export class AppRoutingModule {}

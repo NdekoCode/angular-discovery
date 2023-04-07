@@ -11,7 +11,7 @@ import { CardFooterComponent } from './components/card-footer/card-footer.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ImageSnapComponent } from './components/image-snap/image-snap.component';
-import { BorderCardDirective } from './directives/border-card.directive';
+import { PokemonModule } from './modules/pokemon/pokemon.module';
 import { AddArticleComponent } from './pages/blog/add-article/add-article.component';
 import { ArticleListComponent } from './pages/blog/article-list/article-list.component';
 import { ArticleComponent } from './pages/blog/article/article.component';
@@ -23,8 +23,6 @@ import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.compone
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PokemonAppComponent } from './pages/pokemon-app/pokemon-app.component';
-import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
 
 @NgModule({
   declarations: [
@@ -45,16 +43,14 @@ import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
     NotFoundComponent,
     AddArticleComponent,
     UpdateArticleComponent,
-    PokemonAppComponent,
-    BorderCardDirective,
-    PokemonTypeColorPipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    PokemonModule,
+    AppRoutingModule,
   ],
   providers: [
     {
