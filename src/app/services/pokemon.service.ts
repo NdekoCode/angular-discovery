@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { POKEMONS } from '../libs/data/constants';
 import { Pokemon } from '../libs/models/pokemon.model';
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PokemonService {
   getPokemonList(): Pokemon[] {
     return POKEMONS;
