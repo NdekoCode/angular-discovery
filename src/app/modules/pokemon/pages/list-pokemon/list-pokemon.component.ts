@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { POKEMONS } from 'src/app/libs/data/constants';
+import { Pokemon } from 'src/app/libs/models/pokemon.model';
 
-import { POKEMONS } from './../../libs/data/constants';
-import { Pokemon } from './../../libs/models/pokemon.model';
 @Component({
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',

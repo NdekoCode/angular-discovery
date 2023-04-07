@@ -47,10 +47,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     PokemonModule,
+    AppRoutingModule,
   ],
   providers: [
     {
