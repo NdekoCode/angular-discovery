@@ -10,6 +10,7 @@ import { PokemonService } from './../../../../services/pokemon.service';
 })
 export class ListPokemonComponent implements OnInit {
   title!: string;
+  isLoading = true;
   pokemonList!: Pokemon[];
   filterPokemonList!: Pokemon[];
   constructor(
@@ -17,8 +18,17 @@ export class ListPokemonComponent implements OnInit {
     private _pokemonService: PokemonService
   ) {}
   ngOnInit(): void {
-    this.pokemonList = this._pokemonService.getPokemonList();
-    this.filterPokemonList = this.pokemonList;
+    this._pokemonService.getPokemonList().subscribe({
+      next: (pokemonList) => {
+        this.pokemonList = pokemonList;
+        this.filterPokemonList = pokemonList;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.isLoading = false;
+      },
+    });
   }
 
   selectPokemon(pokemon: Pokemon) {
@@ -27,9 +37,11 @@ export class ListPokemonComponent implements OnInit {
   takePokemon(arg: Event) {
     const target = arg.target as HTMLInputElement;
     if (target.value) {
-      this.filterPokemonList = [
-        this._pokemonService.getPokemonById(+target.value),
-      ] as Pokemon[];
+      this._pokemonService
+        .getPokemonById(+target.value)
+        .subscribe(
+          (pokemon) => (this.filterPokemonList = [pokemon] as Pokemon[])
+        );
     } else {
       this.filterPokemonList = this.pokemonList;
     }

@@ -29,32 +29,35 @@
   </div>
   <div class="mb-3">{{ input.value }}</div>
   <div class="mb-3">{{ inputEnter.value }}</div>
-  <ul class="row">
-    <li
-      *ngFor="let pokemon of filterPokemonList"
-      (click)="selectPokemon(pokemon)"
-      class="col-md-4 gap-3"
-    >
-      <article
-        (click)="goToPokemon(pokemon)"
-        class="card shadow fadeUp cursor-pointer mb-3"
-        appBorderCard="#7AA874"
+  <div class="" *ngIf="isLoading; else ngElse">Loading...</div>
+  <ng-template #ngElse>
+    <ul class="row">
+      <li
+        *ngFor="let pokemon of filterPokemonList"
+        (click)="selectPokemon(pokemon)"
+        class="col-md-4 gap-3"
       >
-        <header
-          class="card-header d-flex justify-content-center align-items-center"
+        <article
+          (click)="goToPokemon(pokemon)"
+          class="card shadow fadeUp cursor-pointer mb-3"
+          appBorderCard="#7AA874"
         >
-          <img [src]="pokemon.picture" [alt]="pokemon.name" />
-        </header>
-        <div class="card-body">
-          <h5>{{ pokemon.name }}</h5>
-          <p>{{ pokemon.createdAt | date : "medium" }}</p>
-          <span
-            *ngFor="let type of pokemon.types"
-            [class]="type | pokemonTypeColor"
-            >{{ type }}</span
+          <header
+            class="card-header d-flex justify-content-center align-items-center"
           >
-        </div>
-      </article>
-    </li>
-  </ul>
+            <img [src]="pokemon.picture" [alt]="pokemon.name" />
+          </header>
+          <div class="card-body">
+            <h5>{{ pokemon.name }}</h5>
+            <p>{{ pokemon.createdAt | date : "medium" }}</p>
+            <span
+              *ngFor="let type of pokemon.types"
+              [class]="type | pokemonTypeColor"
+              >{{ type }}</span
+            >
+          </div>
+        </article>
+      </li>
+    </ul>
+  </ng-template>
 </div>

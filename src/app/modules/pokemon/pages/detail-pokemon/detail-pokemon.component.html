@@ -1,60 +1,65 @@
-<section *ngIf="pokemon; else ngElse" class="section container">
+<section class="section container">
   <div class="card-action">
     <a (click)="goBack()" class="btn btn-link">Retour</a>
   </div>
-  <div *ngIf="pokemon" class="row">
-    <div class="col-md-6 col-md-12 m-8">
-      <h2 class="text-center">{{ pokemon.name }}</h2>
-      <div class="single-card shadow flex-wrap p-3 mb-5 rounded-3">
-        <div class="card-image">
-          <img [src]="pokemon.picture" [alt]="pokemon.name" />
-        </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <table
-              class="table d-flex table-striped flex-wrap"
-              aria-describedby="Pokemon"
-            >
-              <thead>
-                <tr class="d-flex flex-column">
-                  <th>Nom</th>
-                  <th>Points de vie</th>
-                  <th>Dégâts</th>
-                  <th>Types</th>
-                  <th>Date de création</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="d-flex flex-column">
-                  <td>
-                    <strong>{{ pokemon.name }}</strong>
-                  </td>
-                  <td>
-                    <strong>{{ pokemon.hp }}</strong>
-                  </td>
-                  <td>
-                    <strong>{{ pokemon.cp }}</strong>
-                  </td>
-                  <td>
-                    <span
-                      *ngFor="let type of pokemon.types"
-                      class="{{ type | pokemonTypeColor }}"
-                      >{{ type }}</span
-                    >
-                  </td>
-                  <td>
-                    <em>{{ pokemon.createdAt | date : "dd/MM/yyyy" }}</em>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+  <div class="" *ngIf="isLoading; else finishLoading">Loading...</div>
+  <ng-template #finishLoading>
+    <div *ngIf="pokemon; else ngElse" class="row">
+      <div class="col-md-6 col-md-12 m-8">
+        <h2 class="text-center">{{ pokemon.name }}</h2>
+        <div class="single-card shadow flex-wrap p-3 mb-5 rounded-3">
+          <div class="card-image">
+            <img [src]="pokemon.picture" [alt]="pokemon.name" />
           </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <table
+                class="table d-flex table-striped flex-wrap"
+                aria-describedby="Pokemon"
+              >
+                <thead>
+                  <tr class="d-flex flex-column">
+                    <th>Nom</th>
+                    <th>Points de vie</th>
+                    <th>Dégâts</th>
+                    <th>Types</th>
+                    <th>Date de création</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="d-flex flex-column">
+                    <td>
+                      <strong>{{ pokemon.name }}</strong>
+                    </td>
+                    <td>
+                      <strong>{{ pokemon.hp }}</strong>
+                    </td>
+                    <td>
+                      <strong>{{ pokemon.cp }}</strong>
+                    </td>
+                    <td>
+                      <span
+                        *ngFor="let type of pokemon.types"
+                        class="{{ type | pokemonTypeColor }}"
+                        >{{ type }}</span
+                      >
+                    </td>
+                    <td>
+                      <em>{{ pokemon.createdAt | date : "dd/MM/yyyy" }}</em>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <a
+            [routerLink]="'/pokemon/edit/' + pokemon.id"
+            class="btn btn-warning"
+            >Modifier</a
+          >
         </div>
-        <a [routerLink]="'/pokemon/edit/' + pokemon.id" class="btn btn-warning"
-          >Modifier</a
-        >
       </div>
     </div>
-  </div>
+    <ng-template #ngElse> Pas de POKEMON trouver </ng-template>
+  </ng-template>
 </section>
-<ng-template #ngElse> Pas de POKEMON trouver </ng-template>

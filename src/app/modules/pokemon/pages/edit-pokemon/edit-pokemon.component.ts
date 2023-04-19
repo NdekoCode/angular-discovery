@@ -10,12 +10,22 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class EditPokemonComponent {
   pokemon!: Pokemon;
+  isLoading: boolean = true;
   constructor(
     private _pokemonService: PokemonService,
     private _router: ActivatedRoute
   ) {}
   ngOnInit() {
     const id: number = +this._router.snapshot.params['id'];
-    this.pokemon = this._pokemonService.getPokemonById(id)!;
+    this._pokemonService.getPokemonById(id).subscribe({
+      next: (pokemon) => {
+        this.pokemon = pokemon!;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.log(err);
+        this.isLoading = false;
+      },
+    });
   }
 }

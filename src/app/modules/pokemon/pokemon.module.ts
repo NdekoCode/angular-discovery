@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { BorderCardDirective } from './border-card.directive';
-import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.component';
 import { DetailPokemonComponent } from './pages/detail-pokemon/detail-pokemon.component';
 import { EditPokemonComponent } from './pages/edit-pokemon/edit-pokemon.component';
 import { ListPokemonComponent } from './pages/list-pokemon/list-pokemon.component';
+import { PokemonFormComponent } from './pages/pokemon-form/pokemon-form.component';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 const pokemonRoutes: Routes = [
   {
