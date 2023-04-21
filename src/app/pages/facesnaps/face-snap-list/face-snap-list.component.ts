@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
 import { FaceSnap } from '../../../libs/models/face-snap.model';
 import { FaceSnapService } from '../../../services/face-snap.service';
 @Component({
@@ -10,9 +11,20 @@ export class FaceSnapListComponent implements OnInit {
   constructor(private faceSnapService: FaceSnapService) {}
   faceSnaps!: FaceSnap[];
   typeSnap!: string;
+  isLoading: boolean = false;
 
   ngOnInit(): void {
     this.typeSnap = 'Photos';
-    this.faceSnaps = this.faceSnapService.getAllFaceSnaps();
+    this.faceSnapService.getAllFaceSnaps().subscribe(
+      (faceSnaps) => {
+        this.faceSnaps = faceSnaps;
+        this.isLoading = false;
+      },
+      (err) => {
+        console.log(err);
+        this.isLoading = false;
+        of([]);
+      }
+    );
   }
 }

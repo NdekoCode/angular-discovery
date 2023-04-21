@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
+    "serve": "json-server --watch src/app/libs/data/db.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -31,7 +32,6 @@
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
     "@types/uuid": "^9.0.1",
-    "angular-in-memory-web-api": "0.15.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

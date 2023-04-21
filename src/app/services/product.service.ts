@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product, ProductData } from 'src/app/libs/utils/types';
+import { ApiService } from './api.service';
 
 @Injectable()
 export class ProductService {
   products: Product[] = [];
-  constructor(private _httpClient: HttpClient) {}
+  constructor(
+    private _httpClient: HttpClient,
+    private _apiConfig: ApiService
+  ) {}
   getAllProducts() {
     return this.products;
   }
@@ -17,6 +21,8 @@ export class ProductService {
     return product;
   }
   getProductsFromServer() {
-    return this._httpClient.get<ProductData>('/assets/data/products.json');
+    return this._httpClient.get<ProductData>(
+      `${this._apiConfig.baseUrl}/products`
+    );
   }
 }

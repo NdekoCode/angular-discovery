@@ -1,20 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, of, tap } from 'rxjs';
 import { booksData } from '../libs/data/constants';
 import { Book } from './../libs/models/book.mode';
+import { ApiService } from './api.service';
 @Injectable()
 export class BookService {
   books = booksData;
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient, private apiConfig: ApiService) {}
   getBooks() {
-    this._httpClient.get<Book[]>('/api/books').pipe(
-      tap((res) => console.log(res)),
-      catchError((err) => {
-        console.error(err);
-        return of([]);
-      })
-    );
-    return this.books;
+    this._httpClient.get<Book[]>(this.apiConfig.baseUrl + '/books');
   }
 }

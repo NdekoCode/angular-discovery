@@ -4,7 +4,6 @@ import * as fr from '@angular/common/locales/fr';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardBodyComponent } from './components/card-body/card-body.component';
@@ -24,7 +23,6 @@ import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.compone
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -49,9 +47,6 @@ import { InMemoryDataService } from './services/in-memory-data.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-    }),
     FormsModule,
     ReactiveFormsModule,
     PokemonModule,

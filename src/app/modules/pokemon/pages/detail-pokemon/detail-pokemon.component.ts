@@ -24,6 +24,7 @@ export class DetailPokemonComponent implements OnInit {
         this.isLoading = false;
       },
       error: (err) => {
+        console.error(err);
         this.isLoading = false;
       },
     });

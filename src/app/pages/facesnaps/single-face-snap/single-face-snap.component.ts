@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 import { FaceSnap } from '../../../libs/models/face-snap.model';
 import { FaceSnapService } from '../../../services/face-snap.service';
 
@@ -13,6 +14,7 @@ export class SingleFaceSnapComponent implements OnInit {
   isLiked!: boolean;
   faceSnap!: FaceSnap;
   faceSnapId!: number;
+  isLoading = true;
   constructor(
     private _snapService: FaceSnapService,
     private router: ActivatedRoute
@@ -21,7 +23,20 @@ export class SingleFaceSnapComponent implements OnInit {
     this.isLiked = false;
     // On fait du typeCast: ça nous permet de transformer une chaine de caractère qui contient des nombres et les transformer en Number
     this.faceSnapId = +this.router.snapshot.params['id'];
-    this.faceSnap = this._snapService.getFaceSnapById(this.faceSnapId);
+    this._snapService.getFaceSnapById(this.faceSnapId).subscribe(
+      (faceSnap) => {
+        if (faceSnap) {
+          this.faceSnap = faceSnap;
+          this.isLoading = false;
+        } else {
+          this.isLoading = false;
+        }
+      },
+      (err) => {
+        console.log(err);
+        of({} as FaceSnap);
+      }
+    );
   }
   onSnap(arg: any) {
     if (this.isLiked) {
