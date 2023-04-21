@@ -49,10 +49,14 @@
     {
       "id": 1,
       "name": "Bulbizarre",
-      "hp": 25,
+      "hp": 45,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-      "types": ["Plante", "Poison"],
+      "types": [
+        "Plante",
+        "Poison",
+        "Feu"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -61,7 +65,9 @@
       "hp": 28,
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-      "types": ["Feu"],
+      "types": [
+        "Feu"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -70,7 +76,9 @@
       "hp": 21,
       "cp": 4,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
-      "types": ["Eau"],
+      "types": [
+        "Eau"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -79,7 +87,10 @@
       "hp": 16,
       "cp": 2,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png",
-      "types": ["Insecte", "Poison"],
+      "types": [
+        "Insecte",
+        "Poison"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -88,7 +99,10 @@
       "hp": 30,
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
-      "types": ["Normal", "Vol"],
+      "types": [
+        "Normal",
+        "Vol"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -97,7 +111,9 @@
       "hp": 18,
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -106,7 +122,10 @@
       "hp": 14,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/021.png",
-      "types": ["Normal", "Vol"],
+      "types": [
+        "Normal",
+        "Vol"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -115,7 +134,9 @@
       "hp": 16,
       "cp": 4,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png",
-      "types": ["Poison"],
+      "types": [
+        "Poison"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -124,7 +145,9 @@
       "hp": 21,
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
-      "types": ["Electrik"],
+      "types": [
+        "Electrik"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -133,7 +156,9 @@
       "hp": 19,
       "cp": 3,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png",
-      "types": ["Normal"],
+      "types": [
+        "Normal"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -142,7 +167,9 @@
       "hp": 25,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
-      "types": ["Fée"],
+      "types": [
+        "Fée"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -151,7 +178,9 @@
       "hp": 17,
       "cp": 8,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
-      "types": ["Feu"],
+      "types": [
+        "Feu"
+      ],
       "createdAt": "2022-01-01T00:00:00.000Z"
     }
   ],
@@ -167,7 +196,6 @@
       "brand": "Apple",
       "category": "smartphones",
       "imageURL": "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
-
       "like": 9
     },
     {
@@ -240,9 +268,7 @@
     {
       "id": 1,
       "title": "Lorem Ipsum is simply",
-
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-
       "imageURL": "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB3b21lbiUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
       "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 17,

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/libs/models/pokemon.model';
 import { PokemonService } from '../../../../services/pokemon.service';
 
@@ -11,16 +10,16 @@ import { PokemonService } from '../../../../services/pokemon.service';
 })
 export class PokemonFormComponent implements OnInit {
   @Input() pokemon!: Pokemon;
+  @Output() editForm = new EventEmitter<number | string>();
+  @Output() addForm = new EventEmitter<Pokemon>();
   types!: string[];
-  constructor(
-    private _router: Router,
-    private _pokemonService: PokemonService
-  ) {}
+  constructor(private _pokemonService: PokemonService) {}
   ngOnInit() {
     this.types = this._pokemonService.getPokemonTypeList();
   }
   onSubmit(arg: NgForm) {
-    this._router.navigate(['/pokemon', this.pokemon.id]);
+    this.editForm.emit(this.pokemon.id);
+    this.addForm.emit(this.pokemon);
   }
   hasType(type: string) {
     return this.pokemon.types.includes(type);

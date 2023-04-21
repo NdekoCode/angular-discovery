@@ -7,7 +7,7 @@
         <div class="shadow p-3 text-center mt-3">
             <img [src]="pokemon.picture" [alt]="pokemon.name">
         </div>
-        <app-pokemon-form [pokemon] ="pokemon"/>
+        <app-pokemon-form (editForm)="editPokemon($event)" [pokemon] ="pokemon"/>
         </div>
     </div>
     <ng-template #ngElse>
