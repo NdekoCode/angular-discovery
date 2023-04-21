@@ -2,19 +2,11 @@
   <h1 class="text-center">Liste de Pokémon</h1>
   <div class="mb-3">
     <input
-      type="number"
+      type="text"
       placeholder="Entrer l'identifiant du pokemon à rechercher"
       class="form-control shadow-sm"
+      [(ngModel)]="title"
       (input)="takePokemon($event)"
-    />
-  </div>
-  <div class="mb-3">
-    <input
-      #input
-      type="text"
-      placeholder="new Input"
-      (keyup)="(0)"
-      class="form-control shadow-sm"
     />
   </div>
 
@@ -27,7 +19,6 @@
       class="form-control shadow-sm"
     />
   </div>
-  <div class="mb-3">{{ input.value }}</div>
   <div class="mb-3">{{ inputEnter.value }}</div>
   <div class="" *ngIf="isLoading; else ngElse">Loading...</div>
   <ng-template #ngElse>

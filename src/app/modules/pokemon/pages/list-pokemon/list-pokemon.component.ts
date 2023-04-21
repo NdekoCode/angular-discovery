@@ -37,11 +37,9 @@ export class ListPokemonComponent implements OnInit {
   takePokemon(arg: Event) {
     const target = arg.target as HTMLInputElement;
     if (target.value) {
-      this._pokemonService
-        .getPokemonById(+target.value)
-        .subscribe(
-          (pokemon) => (this.filterPokemonList = [pokemon] as Pokemon[])
-        );
+      this.filterPokemonList = this.pokemonList.filter((p) =>
+        p.name.toLowerCase().includes(target.value.toLowerCase())
+      );
     } else {
       this.filterPokemonList = this.pokemonList;
     }
