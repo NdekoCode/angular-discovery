@@ -4,7 +4,7 @@ import { Product, ProductData } from 'src/app/libs/utils/types';
 
 @Injectable()
 export class ProductService {
-  products: any[] = [];
+  products: Product[] = [];
   constructor(private _httpClient: HttpClient) {}
   getAllProducts() {
     return this.products;

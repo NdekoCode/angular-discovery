@@ -1,5 +1,6 @@
 import { FaceSnap } from 'src/app/libs/models/face-snap.model';
 import { Pokemon } from '../models/pokemon.model';
+import { Book } from './../models/book.mode';
 export const faceSnapsData: FaceSnap[] = [
   {
     id: 1,
@@ -268,7 +269,7 @@ export const POKEMONS: Pokemon[] = [
     createdAt: new Date(),
   },
 ];
-export const booksData = [
+export const booksData: Book[] = [
   {
     author: 'Chinua Achebe',
     country: 'Nigeria',

@@ -1,29 +1,36 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { faceSnapsData } from '../libs/data/constants';
+import { Observable, catchError, of, tap } from 'rxjs';
 import { FaceSnap } from '../libs/models/face-snap.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FaceSnapService {
-  faceSnaps: FaceSnap[] = faceSnapsData;
-
-  getAllFaceSnaps(): FaceSnap[] {
-    return this.faceSnaps;
-  }
-  getFaceSnapById(faceSnapId: number): FaceSnap {
-    const faceSnap = this.faceSnaps.find(
-      (faceSnap) => faceSnap.id === faceSnapId
+  constructor(private _httpClient: HttpClient) {}
+  getAllFaceSnaps(): Observable<FaceSnap[]> {
+    return this._httpClient.get<FaceSnap[]>('api/facesnaps').pipe(
+      tap((res) => console.log(res)),
+      catchError((err) => {
+        console.log(err);
+        return of([]);
+      })
     );
-
-    if (!faceSnap) {
-      throw new Error('FaceSnap not found');
-    } else {
-      return faceSnap;
-    }
+  }
+  getFaceSnapById(faceSnapId: number): Observable<FaceSnap | null> {
+    return this._httpClient.get<FaceSnap>(`/api/facesnaps/${faceSnapId}`).pipe(
+      tap((res) => console.log(res)),
+      catchError((err) => {
+        console.error(err);
+        return of(null);
+      })
+    );
   }
   snapFaceSnapById(faceSnapId: number, snapType?: string) {
-    const faceSnap = this.getFaceSnapById(faceSnapId);
-    snapType === 'inc' ? faceSnap.snaps++ : faceSnap.snaps--;
+    this.getFaceSnapById(faceSnapId).subscribe((faceSnap) => {
+      if (faceSnap) {
+        snapType === 'inc' ? faceSnap.snaps++ : faceSnap.snaps--;
+      }
+    });
   }
 }
