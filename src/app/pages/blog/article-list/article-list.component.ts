@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, interval } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { Product, ProductData } from 'src/app/libs/utils/types';
+import { Product } from 'src/app/libs/utils/types';
 import { ProductService } from '../../../services/product.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class ArticleListComponent implements OnInit, OnDestroy {
   compterSubscription!: Subscription;
   products!: Product[];
   message!: string;
+  isLoading = true;
   constructor(private _productsService: ProductService) {}
   ngOnInit() {
     this.getProducts();
@@ -34,11 +35,17 @@ export class ArticleListComponent implements OnInit, OnDestroy {
     this.message = arg;
   }
   getProducts() {
-    this._productsService
-      .getProductsFromServer()
-      .subscribe((data: ProductData) => {
-        this.products = data?.products;
-      });
+    this._productsService.getProductsFromServer().subscribe({
+      next: (data: Product[]) => {
+        console.log(data);
+        this.products = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.isLoading = false;
+      },
+    });
   }
   ngOnDestroy() {
     this.compterSubscription.unsubscribe();

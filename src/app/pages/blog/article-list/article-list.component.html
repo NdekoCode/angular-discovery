@@ -1,8 +1,17 @@
 <div class="alert alert-success mt-5 container">
-  {{secondes}}
+  {{ secondes }}
 </div>
 
 <div class="alert alert-success mt-5 container" *ngIf="message">
   {{ message }}
 </div>
-<app-article *ngFor="let product of products" [product]="product" (info)="onGetInfo($event)"></app-article>
+<div class="container" *ngIf="isLoading; else notLoading">
+  <div class="text-center">Loading...</div>
+</div>
+<ng-template #notLoading>
+  <app-article
+    *ngFor="let product of products"
+    [product]="product"
+    (info)="onGetInfo($event)"
+  ></app-article>
+</ng-template>

@@ -11,13 +11,22 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class SingleArticleComponent implements OnInit {
   product!: Product;
+  isLoading = true;
   constructor(
     private _productService: ProductService,
     private router: ActivatedRoute
   ) {}
   ngOnInit() {
     const id: string | number = +this.router.snapshot.params['id'];
-    this.product = this._productService.getProductById(id);
+    this._productService.getProductById(id).subscribe({
+      next: (product) => {
+        this.product = product;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.isLoading = false;
+      },
+    });
     console.log(this.product);
   }
 }

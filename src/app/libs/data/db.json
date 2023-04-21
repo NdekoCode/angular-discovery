@@ -53,7 +53,7 @@
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
       "types": ["Plante", "Poison"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 2,
@@ -62,7 +62,7 @@
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
       "types": ["Feu"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 3,
@@ -71,7 +71,7 @@
       "cp": 4,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
       "types": ["Eau"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 4,
@@ -80,7 +80,7 @@
       "cp": 2,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png",
       "types": ["Insecte", "Poison"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 5,
@@ -89,7 +89,7 @@
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
       "types": ["Normal", "Vol"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 6,
@@ -98,7 +98,7 @@
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
       "types": ["Normal"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 7,
@@ -107,7 +107,7 @@
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/021.png",
       "types": ["Normal", "Vol"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 8,
@@ -116,7 +116,7 @@
       "cp": 4,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png",
       "types": ["Poison"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 9,
@@ -125,7 +125,7 @@
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
       "types": ["Electrik"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 10,
@@ -134,7 +134,7 @@
       "cp": 3,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png",
       "types": ["Normal"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 11,
@@ -143,7 +143,7 @@
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
       "types": ["Fée"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
       "id": 12,
@@ -152,7 +152,7 @@
       "cp": 8,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
       "types": ["Feu"],
-      "createdAt": "new Date()"
+      "createdAt": "2022-01-01T00:00:00.000Z"
     }
   ],
   "products": [
@@ -244,7 +244,7 @@
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
 
       "imageURL": "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB3b21lbiUyMHdvcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 17,
       "location": "Paris"
     },
@@ -253,7 +253,7 @@
       "title": "Lorem Ipsum is simply",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
       "imageURL": "/assets/images/HEALTHYFRESH.jpg",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 205,
       "location": "Congo RDC"
     },
@@ -262,7 +262,7 @@
       "title": "Lorem Ipsum is simply",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
       "imageURL": "https://images.unsplash.com/photo-1571442463800-1337d7af9d2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsYWNrJTIwd29tZW4lMjB3b3JrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 0
     },
     {
@@ -270,7 +270,7 @@
       "title": "Archibald",
       "description": "Mon meilleur ami depuis tout petit !",
       "imageURL": "/assets/images/teddy.jpg",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 0,
       "location": "Paris"
     },
@@ -279,7 +279,7 @@
       "title": "Three Rock Mountain",
       "description": "Un endroit magnifique pour les randonnées.",
       "imageURL": "/assets/images/mountain.jpg",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 6,
       "location": "la montagne"
     },
@@ -288,7 +288,7 @@
       "title": "Un bon repas",
       "description": "Mmmh que c'est bon !",
       "imageURL": "https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg",
-      "createdDate": "new Date()",
+      "createdDate": "2022-01-01T00:00:00.000Z",
       "snaps": 0
     }
   ]
