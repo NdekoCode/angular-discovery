@@ -32,7 +32,7 @@
             </div>
           </div>
           <!-- Pokemon image -->
-          <div class="form-group mb-3">
+          <div class="form-group mb-3" *ngIf="!isEditing">
             <label for="name">Image</label>
             <input
               type="url"

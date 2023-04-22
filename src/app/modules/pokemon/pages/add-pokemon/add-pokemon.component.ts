@@ -16,20 +16,11 @@ export class AddPokemonComponent implements OnInit {
     private _router: Router
   ) {}
   ngOnInit(): void {
-    this.uuid = Math.random().toString(36).substring(0, 6);
-    this.pokemon = {
-      id: this.uuid,
-      name: '',
-      hp: 0,
-      cp: 0,
-      picture: '',
-      types: [],
-      createdAt: new Date(),
-    };
+    this.pokemon = new Pokemon();
   }
   onAddPokemon(pokemon: Pokemon) {
     this._pokemonService.addPokemon(pokemon).subscribe(() => {
-      this._router.navigate(['/pokemons']);
+      this._router.navigate(['/pokemon', pokemon.id]);
     });
   }
 }

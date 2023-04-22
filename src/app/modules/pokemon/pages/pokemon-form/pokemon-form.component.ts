@@ -9,6 +9,7 @@ import { PokemonService } from '../../../../services/pokemon.service';
   styleUrls: ['./pokemon-form.component.scss'],
 })
 export class PokemonFormComponent implements OnInit {
+  @Input() isEditing: boolean = false;
   @Input() pokemon!: Pokemon;
   @Output() editForm = new EventEmitter<number | string>();
   @Output() addForm = new EventEmitter<Pokemon>();
@@ -18,8 +19,11 @@ export class PokemonFormComponent implements OnInit {
     this.types = this._pokemonService.getPokemonTypeList();
   }
   onSubmit(arg: NgForm) {
-    this.editForm.emit(this.pokemon.id);
-    this.addForm.emit(this.pokemon);
+    if (this.isEditing) {
+      this.editForm.emit(this.pokemon.id);
+    } else {
+      this.addForm.emit(this.pokemon);
+    }
   }
   hasType(type: string) {
     return this.pokemon.types.includes(type);

@@ -59,11 +59,11 @@ export class PokemonService {
       `${this._apiConfig.baseUrl}/pokemons/${pokemonId}`
     );
   }
-  addPokemon(pokemon: Pokemon): Observable<Pokemon> {
+  addPokemon(pokemon: Pokemon): Observable<null> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     };
-    return this._httpClient.post<Pokemon>(
+    return this._httpClient.post<null>(
       `${this._apiConfig.baseUrl}/pokemons`,
       pokemon,
       httpOptions
