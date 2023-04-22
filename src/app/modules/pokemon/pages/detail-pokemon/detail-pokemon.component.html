@@ -52,11 +52,16 @@
               </table>
             </div>
           </div>
-          <a
-            [routerLink]="'/pokemon/edit/' + pokemon.id"
-            class="btn btn-warning"
-            >Modifier</a
-          >
+          <div class="btn-container d-flex gap-1">
+            <a
+              [routerLink]="'/pokemon/edit/' + pokemon.id"
+              class="btn btn-warning"
+              >Modifier</a
+            >
+            <a (click)="onDeletePokemon(pokemon.id)" class="btn btn-danger"
+              >Supprimer</a
+            >
+          </div>
         </div>
       </div>
     </div>

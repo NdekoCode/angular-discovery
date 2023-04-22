@@ -31,8 +31,8 @@ export class EditPokemonComponent {
   }
   editPokemon(id: string | number) {
     this._pokemonService.updatePokemon(this.pokemon).subscribe((pokemon) => {
-      this.pokemon = this.pokemon;
-      this._router.navigate(['/pokemon', this.pokemon.id]);
+      this.pokemon = pokemon as Pokemon;
+      this._router.navigate(['/pokemon', id]);
     });
   }
 }

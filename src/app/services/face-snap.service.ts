@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
 import { FaceSnap } from '../libs/models/face-snap.model';
@@ -38,6 +38,14 @@ export class FaceSnapService {
     this.getFaceSnapById(faceSnapId).subscribe((faceSnap) => {
       if (faceSnap) {
         snapType === 'inc' ? faceSnap.snaps++ : faceSnap.snaps--;
+        const httpConfig = {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        };
+        this._httpClient.put(
+          `${this._apiConfig.baseUrl}/facesnaps/${faceSnapId}`,
+          faceSnap,
+          httpConfig
+        );
       }
     });
   }

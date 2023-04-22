@@ -54,6 +54,11 @@ export class PokemonService {
       httpOptions
     );
   }
+  deletePokemon(pokemonId: string | number): Observable<Pokemon> {
+    return this._httpClient.delete<Pokemon>(
+      `${this._apiConfig.baseUrl}/pokemons/${pokemonId}`
+    );
+  }
   private log<T>(value: T): void {
     console.log(value);
   }
