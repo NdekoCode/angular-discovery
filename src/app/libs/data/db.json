@@ -183,6 +183,18 @@
         "Feu"
       ],
       "createdAt": "2022-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "0.47o0",
+      "name": "Cameron Ramirez",
+      "hp": 19,
+      "cp": 39,
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+      "types": [
+        "Plante",
+        "Feu"
+      ],
+      "createdAt": "2023-04-22T12:03:27.968Z"
     }
   ],
   "products": [

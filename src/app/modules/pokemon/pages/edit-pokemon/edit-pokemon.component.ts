@@ -17,7 +17,7 @@ export class EditPokemonComponent {
     private _router: Router
   ) {}
   ngOnInit() {
-    const id: number = +this._routes.snapshot.params['id'];
+    const id: number = this._routes.snapshot.params['id'];
     this._pokemonService.getPokemonById(id).subscribe({
       next: (pokemon) => {
         this.pokemon = pokemon!;

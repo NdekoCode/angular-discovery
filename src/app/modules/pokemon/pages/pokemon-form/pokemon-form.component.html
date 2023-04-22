@@ -18,7 +18,7 @@
               class="form-control"
               id="name"
               required
-              pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+              pattern="^[a-zA-Z0-9àéèç ]{1,25}$"
               [(ngModel)]="pokemon.name"
               name="name"
               #name="ngModel"
@@ -31,7 +31,26 @@
               Le nom du pokémon est requis (1-25).
             </div>
           </div>
+          <!-- Pokemon image -->
+          <div class="form-group mb-3">
+            <label for="name">Image</label>
+            <input
+              type="url"
+              class="form-control"
+              id="picture"
+              required
+              [(ngModel)]="pokemon.picture"
+              name="picture"
+              #picture="ngModel"
+            />
 
+            <div
+              [hidden]="picture.valid || picture.pristine"
+              class="alert alert-danger"
+            >
+              Le l'image du pokémon est requis.
+            </div>
+          </div>
           <!-- Pokemon hp -->
           <div class="form-group mb-3">
             <label for="hp">Point de vie</label>
