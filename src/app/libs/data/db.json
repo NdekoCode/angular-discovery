@@ -1,4 +1,71 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Arick",
+      "lastName": "Bulakali",
+      "email": "arickbulakali@gmail.com",
+      "username": "ndekocode",
+      "password": "12345678"
+    },
+    {
+      "id": 1,
+      "firstName": "Arick",
+      "lastName": "Walcott",
+      "email": "arickwalcott0@gmail.com",
+      "username": "walcott",
+      "password": "12345678"
+    },
+    {
+      "id": 1,
+      "firstName": "Ndekocode",
+      "lastName": "Arick",
+      "email": "arick.bulakali@zabibu.co",
+      "username": "zabibu",
+      "password": "12345678"
+    },
+    {
+      "id": 1,
+      "firstName": "Terry",
+      "lastName": "Medhurst",
+      "email": "atuny0@sohu.com",
+      "username": "atuny0",
+      "password": "9uQFF1Lh"
+    },
+    {
+      "id": 2,
+      "firstName": "Sheldon",
+      "lastName": "Quigley",
+      "email": "hbingley1@plala.or.jp",
+      "phone": "+7 813 117 7139",
+      "username": "hbingley1",
+      "password": "CQutx25i8r"
+    },
+    {
+      "id": 3,
+      "firstName": "Terrill",
+      "lastName": "Hills",
+      "email": "rshawe2@51.la",
+      "username": "rshawe2",
+      "password": "OWsTbMUgFc"
+    },
+    {
+      "id": 4,
+      "firstName": "Miles",
+      "lastName": "Cummerata",
+      "email": "yraigatt3@nature.com",
+      "username": "yraigatt3",
+      "password": "sRQxjPfdS"
+    },
+    {
+      "id": 5,
+      "firstName": "Mavis",
+      "lastName": "Schultz",
+      "email": "kmeus4@upenn.edu",
+      "username": "kmeus4",
+      "password": "aUTdmmmbH"
+    }
+  ],
   "books": [
     {
       "id": 1,
@@ -52,10 +119,7 @@
       "hp": 25,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-      "types": [
-        "Plante",
-        "Poison"
-      ],
+      "types": ["Plante", "Poison"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -64,11 +128,7 @@
       "hp": 28,
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-      "types": [
-        "Feu",
-        "Plante",
-        "Eau"
-      ],
+      "types": ["Feu", "Plante", "Eau"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -77,10 +137,7 @@
       "hp": 30,
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
-      "types": [
-        "Normal",
-        "Vol"
-      ],
+      "types": ["Normal", "Vol"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -89,9 +146,7 @@
       "hp": 18,
       "cp": 6,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
-      "types": [
-        "Normal"
-      ],
+      "types": ["Normal"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -100,9 +155,7 @@
       "hp": 16,
       "cp": 4,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png",
-      "types": [
-        "Poison"
-      ],
+      "types": ["Poison"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -111,9 +164,7 @@
       "hp": 21,
       "cp": 7,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
-      "types": [
-        "Electrik"
-      ],
+      "types": ["Electrik"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -122,9 +173,7 @@
       "hp": 19,
       "cp": 3,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png",
-      "types": [
-        "Normal"
-      ],
+      "types": ["Normal"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -133,9 +182,7 @@
       "hp": 25,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
-      "types": [
-        "Fée"
-      ],
+      "types": ["Fée"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -144,9 +191,7 @@
       "hp": 17,
       "cp": 8,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
-      "types": [
-        "Feu"
-      ],
+      "types": ["Feu"],
       "createdAt": "2022-01-01T00:00:00.000Z"
     },
     {
@@ -155,9 +200,7 @@
       "hp": 33,
       "cp": 20,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/100.png",
-      "types": [
-        "Plante"
-      ],
+      "types": ["Plante"],
       "createdAt": "2023-04-22T12:47:35.514Z"
     },
     {
@@ -166,10 +209,7 @@
       "hp": 42,
       "cp": 87,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/099.png",
-      "types": [
-        "Feu",
-        "Eau"
-      ],
+      "types": ["Feu", "Eau"],
       "createdAt": "2023-04-23T05:34:18.620Z"
     }
   ],

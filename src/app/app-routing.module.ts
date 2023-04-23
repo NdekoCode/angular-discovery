@@ -8,13 +8,17 @@ import { FaceSnapListComponent } from './pages/facesnaps/face-snap-list/face-sna
 import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
-
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: 'article/:id',
     component: SingleArticleComponent,

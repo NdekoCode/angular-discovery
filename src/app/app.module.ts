@@ -23,6 +23,7 @@ import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.compone
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent,
     AddArticleComponent,
     UpdateArticleComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

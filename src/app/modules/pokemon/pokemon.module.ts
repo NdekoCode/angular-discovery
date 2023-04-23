@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { ShareModuleModule } from '../share-module/share-module.module';
+import { AuthGuard } from './../../auth.guard';
 import { BorderCardDirective } from './border-card.directive';
 import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
 import { AddPokemonComponent } from './pages/add-pokemon/add-pokemon.component';
@@ -25,6 +26,7 @@ const pokemonRoutes: Routes = [
   {
     path: 'pokemon/add',
     component: AddPokemonComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'pokemon/:id',
@@ -33,6 +35,7 @@ const pokemonRoutes: Routes = [
   {
     path: 'pokemon/edit/:id',
     component: EditPokemonComponent,
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({
