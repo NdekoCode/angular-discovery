@@ -27,6 +27,5 @@ export class SingleArticleComponent implements OnInit {
         this.isLoading = false;
       },
     });
-    console.log(this.product);
   }
 }

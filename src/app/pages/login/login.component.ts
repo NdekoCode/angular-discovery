@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
   login(form: NgForm) {
     this._authService.login(this.email, this.password).subscribe((response) => {
-      console.log(response);
       if (response) {
         this.message = 'Vous etes connecter';
         this._router.navigate(['/pokemons']);

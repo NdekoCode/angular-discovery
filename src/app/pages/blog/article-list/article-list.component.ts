@@ -37,7 +37,6 @@ export class ArticleListComponent implements OnInit, OnDestroy {
   getProducts() {
     this._productsService.getProductsFromServer().subscribe({
       next: (data: Product[]) => {
-        console.log(data);
         this.products = data;
         this.isLoading = false;
       },

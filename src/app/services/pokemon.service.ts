@@ -25,7 +25,6 @@ export class PokemonService {
       );
   }
   getPokemonById(pokemonId: number): Observable<Pokemon | null> {
-    console.log(`${this._apiConfig.baseUrl}/pokemons/${pokemonId}`);
     return this._httpClient.get<Pokemon>(
       `${this._apiConfig.baseUrl}/pokemons/${pokemonId}`
     );
