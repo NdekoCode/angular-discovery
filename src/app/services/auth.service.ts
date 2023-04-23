@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, delay, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { User } from './../libs/models/user.model';
 import { ApiService } from './api.service';
 @Injectable({
@@ -15,30 +15,31 @@ export class AuthService {
     private _apiConfig: ApiService
   ) {}
   login(email: string, password: string): Observable<boolean> {
-    this.isLoggedIn = true;
     this.isLoading = true;
-    this._httpClient
-      .get<User>(`${this._apiConfig.baseUrl}/users/?email=${email}`)
-      .subscribe({
-        next: (user) => {
+    return this.findUser(email).pipe(
+      tap((response) => {
+        const user = response[0];
+        this.isLoading = false;
+        if (user) {
           if (user.email === email && user.password === password) {
             this.isLoggedIn = true;
-            this.isLoading = false;
-            console.log(user);
-            return user;
           }
-          return of({});
-        },
-        error: (err) => {
-          this.isLoggedIn = false;
-          this.isLoading = false;
-          console.error('Failed to authentcated ', err);
-        },
-      });
-    console.log(email, password);
-    return of(this.isLoggedIn).pipe(
-      delay(500),
-      tap((isLoggedIn) => (this.isLoggedIn = isLoggedIn))
+        }
+        return of(this.isLoggedIn);
+      }),
+      map(() => this.isLoggedIn),
+      catchError((err) => {
+        console.error('Failed to authenticate', err);
+        this.isLoggedIn = false;
+        this.isLoading = false;
+        return of(this.isLoggedIn);
+      })
+    );
+  }
+
+  findUser(email: string): Observable<User[]> {
+    return this._httpClient.get<User[]>(
+      `${this._apiConfig.baseUrl}/users/?email=${email}`
     );
   }
   logout(): void {
