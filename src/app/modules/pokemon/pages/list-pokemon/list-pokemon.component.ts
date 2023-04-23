@@ -37,12 +37,21 @@ export class ListPokemonComponent implements OnInit {
   takePokemon(arg: Event) {
     const target = arg.target as HTMLInputElement;
     if (target.value) {
+      this._pokemonService
+        .searchPokemonList(target.value)
+        .subscribe((pokemons) => {
+          this.filterPokemonList = pokemons;
+        });
+    } else {
+      this.filterPokemonList = this.pokemonList;
+    }
+    /* if (target.value) {
       this.filterPokemonList = this.pokemonList.filter((p) =>
         p.name.toLowerCase().includes(target.value.toLowerCase())
       );
     } else {
       this.filterPokemonList = this.pokemonList;
-    }
+    } */
   }
   getEnterDate(arg: string) {
     console.log(arg);
