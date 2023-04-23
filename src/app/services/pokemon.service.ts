@@ -70,20 +70,23 @@ export class PokemonService {
     );
   }
   searchPokemonList(searchTerm: string): Observable<Pokemon[]> {
-    // Faire des recherches par termes
-    return this._httpClient
-      .get<Pokemon[]>(`${this._apiConfig.baseUrl}/pokemons/?q=${searchTerm}`)
-      .pipe(
-        tap((response) => {
-          if (response) {
-            console.log(response);
-          }
-        }),
-        catchError((err) => {
-          console.log(err);
-          return of([]);
-        })
-      );
+    if (searchTerm && searchTerm.trim().length > 1) {
+      // Faire des recherches par termes
+      return this._httpClient
+        .get<Pokemon[]>(`${this._apiConfig.baseUrl}/pokemons/?q=${searchTerm}`)
+        .pipe(
+          tap((response) => {
+            if (response) {
+              console.log(response);
+            }
+          }),
+          catchError((err) => {
+            console.log(err);
+            return of([]);
+          })
+        );
+    }
+    return of([]);
   }
   private log<T>(value: T): void {
     console.log(value);

@@ -1,4 +1,4 @@
-<div *ngIf="isLoading; else finishIsLoading">Loading...</div>
+<app-spinner *ngIf="isLoading; else finishIsLoading"/>
 <ng-template #finishIsLoading>
     <div class="container" *ngIf="pokemon; else ngElse">
         <h1 class="text-center">Editer {{ pokemon.name}} </h1>
