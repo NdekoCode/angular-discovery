@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="mb-3">
+    <!-- #searchBox: variable referencer dans le template -->
+    <input
+      type="search"
+      #searchBox
+      (input)="search(searchBox.value)"
+      placeholder="Entrer l'identifiant du pokemon à rechercher"
+      class="form-control shadow-sm mb-3"
+    />
+    <ul class="list-group card border-0 shadow-sm">
+      <li class="list-group-item" *ngFor="let pokemon of pokemons$ | async">
+        <a (click)="goToDetail(pokemon)">{{ pokemon.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -10,14 +10,29 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class DetailPokemonComponent implements OnInit {
   pokemon!: Pokemon | undefined;
+  isLoading: boolean = true;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _pokemonService: PokemonService
   ) {}
   ngOnInit() {
-    const id: number = +this._route.snapshot.params['id'];
-    this.pokemon = this._pokemonService.getPokemonById(id) as Pokemon;
+    const id: number = this._route.snapshot.params['id'];
+    this._pokemonService.getPokemonById(id).subscribe({
+      next: (pokemon) => {
+        this.pokemon = pokemon as Pokemon;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.isLoading = false;
+      },
+    });
+  }
+  onDeletePokemon(id: string | number) {
+    this._pokemonService.deletePokemon(id).subscribe(() => {
+      this._router.navigate(['pokemons']);
+    });
   }
   goBack() {
     this._router.navigate(['/pokemons']);

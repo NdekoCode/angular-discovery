@@ -1,29 +1,52 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { faceSnapsData } from '../libs/data/constants';
+import { Observable, catchError, of, tap } from 'rxjs';
 import { FaceSnap } from '../libs/models/face-snap.model';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FaceSnapService {
-  faceSnaps: FaceSnap[] = faceSnapsData;
-
-  getAllFaceSnaps(): FaceSnap[] {
-    return this.faceSnaps;
+  constructor(
+    private _httpClient: HttpClient,
+    private _apiConfig: ApiService
+  ) {}
+  getAllFaceSnaps(): Observable<FaceSnap[]> {
+    return this._httpClient
+      .get<FaceSnap[]>(`${this._apiConfig.baseUrl}/facesnaps`)
+      .pipe(
+        tap((res) => console.log(res)),
+        catchError((err) => {
+          console.log(err);
+          return of([]);
+        })
+      );
   }
-  getFaceSnapById(faceSnapId: number): FaceSnap {
-    const faceSnap = this.faceSnaps.find(
-      (faceSnap) => faceSnap.id === faceSnapId
-    );
-
-    if (!faceSnap) {
-      throw new Error('FaceSnap not found');
-    } else {
-      return faceSnap;
-    }
+  getFaceSnapById(faceSnapId: number): Observable<FaceSnap | null> {
+    return this._httpClient
+      .get<FaceSnap>(`${this._apiConfig.baseUrl}/facesnaps/${faceSnapId}`)
+      .pipe(
+        tap((res) => console.log(res)),
+        catchError((err) => {
+          console.error(err);
+          return of(null);
+        })
+      );
   }
   snapFaceSnapById(faceSnapId: number, snapType?: string) {
-    const faceSnap = this.getFaceSnapById(faceSnapId);
-    snapType === 'inc' ? faceSnap.snaps++ : faceSnap.snaps--;
+    this.getFaceSnapById(faceSnapId).subscribe((faceSnap) => {
+      if (faceSnap) {
+        snapType === 'inc' ? faceSnap.snaps++ : faceSnap.snaps--;
+        const httpConfig = {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        };
+        this._httpClient.put(
+          `${this._apiConfig.baseUrl}/facesnaps/${faceSnapId}`,
+          faceSnap,
+          httpConfig
+        );
+      }
+    });
   }
 }

@@ -1,0 +1,18 @@
+<div *ngIf="isLoading; else finishIsLoading">Loading...</div>
+<ng-template #finishIsLoading>
+    <div class="container" *ngIf="pokemon; else ngElse">
+        <h1 class="text-center">Editer {{ pokemon.name}} </h1>
+        <div class="d-flex gap-3 align-items-start">
+    
+        <div class="shadow p-3 text-center mt-3">
+            <img [src]="pokemon.picture" [alt]="pokemon.name">
+        </div>
+        <app-pokemon-form [isEditing]="true" (editForm)="editPokemon($event)" [pokemon] ="pokemon"/>
+        </div>
+    </div>
+    <ng-template #ngElse>
+        <div class="container">
+            <div class="alert alert-warning">Aucun pokemon trouver</div>
+        </div>
+    </ng-template>
+</ng-template>
