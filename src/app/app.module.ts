@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ImageSnapComponent } from './components/image-snap/image-snap.component';
 import { PokemonModule } from './modules/pokemon/pokemon.module';
+import { ShareModuleModule } from './modules/share-module/share-module.module';
 import { AddArticleComponent } from './pages/blog/add-article/add-article.component';
 import { ArticleListComponent } from './pages/blog/article-list/article-list.component';
 import { ArticleComponent } from './pages/blog/article/article.component';
@@ -22,6 +23,7 @@ import { FaceSnapListComponent } from './pages/facesnaps/face-snap-list/face-sna
 import { FaceSnapComponent } from './pages/facesnaps/face-snap/face-snap.component';
 import { LandingPageComponent } from './pages/facesnaps/landing-page/landing-page.component';
 import { SingleFaceSnapComponent } from './pages/facesnaps/single-face-snap/single-face-snap.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
@@ -43,6 +45,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent,
     AddArticleComponent,
     UpdateArticleComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ReactiveFormsModule,
     PokemonModule,
     AppRoutingModule,
+    ShareModuleModule,
   ],
   providers: [
     {

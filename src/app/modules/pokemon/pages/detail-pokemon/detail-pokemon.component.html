@@ -2,7 +2,7 @@
   <div class="card-action">
     <a (click)="goBack()" class="btn btn-link">Retour</a>
   </div>
-  <div class="" *ngIf="isLoading; else finishLoading">Loading...</div>
+  <app-spinner class="" *ngIf="isLoading; else finishLoading"/>
   <ng-template #finishLoading>
     <div *ngIf="pokemon; else ngElse" class="row">
       <div class="col-md-6 col-md-12 m-8">

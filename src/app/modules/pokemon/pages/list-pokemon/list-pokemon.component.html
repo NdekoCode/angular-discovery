@@ -12,7 +12,7 @@
     />
   </div>
   <div class="mb-3">{{ inputEnter.value }}</div> -->
-  <div class="" *ngIf="isLoading; else ngElse">Loading...</div>
+  <app-skeleton-card class="row" *ngIf="isLoading; else ngElse"/>
   <ng-template #ngElse>
     <ul class="row">
       <li

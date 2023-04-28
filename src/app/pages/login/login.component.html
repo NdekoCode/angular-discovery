@@ -1,0 +1,74 @@
+<app-spinner *ngIf="auth.isLoading"></app-spinner>
+<div
+  *ngIf="message"
+  class="container alert"
+  [class]="auth.isLoggedIn ? 'alert-success' : 'alert-danger'"
+>
+  {{ message }}
+</div>
+<main class="form-signin text-center">
+  <form method="POST" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <img
+      class="mb-4"
+      src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"
+      alt="Login"
+      width="72"
+      height="57"
+    />
+    <h1 class="h3 mb-3 fw-normal">Connectez-vous s'il vous plait</h1>
+    <div class="mb-3">
+      <div class="form-floating">
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          class="form-control"
+          id="formEmail"
+          placeholder="name@example.com"
+          pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
+          #formEmail="ngModel"
+          required
+        />
+        <label for="formEmail">Email address</label>
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="formEmail.invalid && (formEmail.dirty || formEmail.touched)"
+      >
+        L'email est requis
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-floating">
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="password"
+          id="formPassword"
+          placeholder="Password"
+          #formPassword="ngModel"
+          autocomplete="true"
+          required
+        />
+        <label for="formPassword">Password</label>
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="
+          formPassword.invalid && (formPassword.dirty || formPassword.touched)
+        "
+      >
+        Le mot de passe est requis
+      </div>
+    </div>
+
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    >
+      Sign in
+    </button>
+  </form>
+</main>

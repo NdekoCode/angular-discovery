@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { ShareModuleModule } from '../share-module/share-module.module';
+import { AuthGuard } from './../../auth.guard';
 import { BorderCardDirective } from './border-card.directive';
+import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
 import { AddPokemonComponent } from './pages/add-pokemon/add-pokemon.component';
 import { DetailPokemonComponent } from './pages/detail-pokemon/detail-pokemon.component';
 import { EditPokemonComponent } from './pages/edit-pokemon/edit-pokemon.component';
 import { ListPokemonComponent } from './pages/list-pokemon/list-pokemon.component';
 import { PokemonFormComponent } from './pages/pokemon-form/pokemon-form.component';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
-import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
 const pokemonRoutes: Routes = [
   {
     path: 'pokemon-app',
@@ -24,6 +26,7 @@ const pokemonRoutes: Routes = [
   {
     path: 'pokemon/add',
     component: AddPokemonComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'pokemon/:id',
@@ -32,6 +35,7 @@ const pokemonRoutes: Routes = [
   {
     path: 'pokemon/edit/:id',
     component: EditPokemonComponent,
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({
@@ -45,7 +49,12 @@ const pokemonRoutes: Routes = [
     AddPokemonComponent,
     SearchPokemonComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(pokemonRoutes), FormsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(pokemonRoutes),
+    FormsModule,
+    ShareModuleModule,
+  ],
   exports: [RouterModule],
   providers: [PokemonService],
 })
